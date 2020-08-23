@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/global.css" media="screen" />
+    <link rel="stylesheet" href="css/results.css" media="screen" />
+    <link rel="stylesheet" href="css/details.css" media="screen" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+
+    <script src="./js/global.js" defer></script>
+    <script src="./js/chart.library.js" defer></script>
+    <script src="./js/results.js" defer></script>
+    <script src="./js/details.js" defer></script>
+    <!-- generics -->
+    <link rel="icon" href="./assets/favicons/favicon-32.png" sizes="32x32" />
+    <link rel="icon" href="./assets/favicons/favicon-57.png" sizes="57x57" />
+    <link rel="icon" href="./assets/favicons/favicon-76.png" sizes="76x76" />
+    <link rel="icon" href="./assets/favicons/favicon-96.png" sizes="96x96" />
+    <link rel="icon" href="./assets/favicons/favicon-128.png" sizes="128x128" />
+    <link rel="icon" href="./assets/favicons/favicon-192.png" sizes="192x192" />
+    <link rel="icon" href="./assets/favicons/favicon-228.png" sizes="228x228" />
+
+    <!-- Android -->
+    <link
+      rel="shortcut icon"
+      sizes="196x196"
+      href="./assets/favicons/favicon-196.png"
+    />
+
+    <!-- iOS -->
+    <link
+      rel="apple-touch-icon"
+      href="./assets/favicons/favicon-120.png"
+      sizes="120x120"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="path/to/favicon-152.png"
+      sizes="152x152"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="path/to/favicon-180.png"
+      sizes="180x180"
+    />
+
+    <!-- Windows 8 IE 10-->
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta
+      name="msapplication-TileImage"
+      content="./assets/favicons/favicon-144.png"
+    />
+
+    <!-- Windows 8.1 + IE11 and above -->
+    <meta
+      name="msapplication-config"
+      content="./assets/favicons/browserconfig.xml"
+    />
+
+    <title>Results Page</title>
+  </head>
+  <body>
+    <div class="loader">
+      <img src="./assets/logo.svg" alt="" />
+    </div>
+
+    <div class="print">Dit is voor de afdruk</div>
+
+    <div class="layout">
+      <!-- header navgation -->
+      <div class="nav_logo-flag">
+        <img src="./assets/logo.svg" alt="logo" class="nav_logo" />
+        <h3 class="nav_flag">Hulp voor bestuivers</h3>
+      </div>
+
+      <header class="header">
+        <nav class="header_nav">
+          <ul class="nav_list">
+            <li class="nav_item active">
+              <a class="nav_item_link" href="/">Advies</a>
+            </li>
+            <li class="nav_item">
+              <a class="nav_item_link">Landschapstypen</a>
+            </li>
+            <li class="nav_item">
+              <a class="nav_item_link">Verantwoording</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- hero -->
+      <section class="hero">
+        <div class="hero_logo-flag">
+          <img src="./assets/logo.svg" alt="logo" class="hero_logo" />
+          <h3 class="hero_flag">HULP VOOR BESTUIVERS</h3>
+        </div>
+        <div class="hero_description">
+          <h3>
+            Advies op maat om bijen en zweefvliegen te helpen overleven in
+            Nederland
+          </h3>
+        </div>
+      </section>
+
+      <!-- content section -->
+      <section class="content">
+        <div class="print-box">
+          <h3 class="content_title">Aanleg van voedselaanbod</h3>
+          <div class="content_chosen-params">
+            <p>Oever of dijk in postcode 6921AB (Gemeente Duiven)</p>
+            <p>Landschapstype: rivierklei</p>
+            <a href="index.html" class="content_edit-btn">
+              <img src="./assets/edit-icon.svg" alt="edit" />
+            </a>
+          </div>
+        </div>
+        <div class="print-box">
+          <div class="chart_wrapper">
+            <h3 class="chart_title">Bijensoorten per type omgeving</h3>
+            <div class="chart_content">
+              <!--  canvas  -->
+              <canvas id="chart_canvas"></canvas>
+
+              <ul class="chart_legend">
+                <!--  element 1  -->
+                <li class="chart_legend_element">
+                  <span class="color-box green" data-color="green"></span>
+                  <p class="chart_legend_element-name">
+                    Droog grasland
+                  </p>
+                  <p class="chart_legend_element-value" data-value="46">46%</p>
+                </li>
+
+                <!--  element 2  -->
+                <li class="chart_legend_element">
+                  <span class="color-box blue" data-color="blue"></span>
+                  <p class="chart_legend_element-name">
+                    Vochtig grasland
+                  </p>
+                  <p class="chart_legend_element-value" data-value="24">24%</p>
+                </li>
+
+                <!--  element 3  -->
+                <li class="chart_legend_element">
+                  <span class="color-box brown" data-color="brown"></span>
+                  <p class="chart_legend_element-name">
+                    Houtige opstand
+                  </p>
+                  <p class="chart_legend_element-value" data-value="30">30%</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="content_introduction text">
+          Aan de hand van uw locatie blijken bestuivers die houden van droog
+          grasland in de meerderheid. Het is dan ook waardevol om bij de
+          inrichting van uw terrein maatregelen te kiezen die deze soorten
+          helpen. Maar denk ook aan voldoende variatie: zijn maatregelen voor
+          droog grasland al veel aanwezig in de nabije omgeving, vul deze dan
+          aan met een ander type. Er zijn verschillende mogelijkheden.
+        </p>
+
+        <div class="main_content">
+          <ul class="content_measures-list">
+            <li class="content_measure-item">
+              <span class="color-box" data-color="green"></span>
+              <a href="#measure_1" class="content_measure_link"
+                >Inzaaien van een bloemenrand</a
+              >
+            </li>
+            <li class="content_measure-item">
+              <span class="color-box" data-color="green"></span>
+              <a href="#measure_2" class="content_measure_link"
+                >Inzaaien van een bloemenveld</a
+              >
+            </li>
+            <li class="content_measure-item">
+              <span class="color-box" data-color="brown"></span>
+              <a href="#measure_3" class="content_measure_link"
+                >Gevarieerde heg of struweelhaag</a
+              >
+            </li>
+            <li class="content_measure-item">
+              <span class="color-box" data-color="brown"></span>
+              <a href="#measure_4" class="content_measure_link"
+                >Gevarieerde bomenrij of houtwal</a
+              >
+            </li>
+            <li class="content_measure-item">
+              <span class="color-box" data-color="blue"></span>
+              <a href="#measure_5" class="content_measure_link"
+                >Bijvriendelijke slootkant</a
+              >
+            </li>
+            <li class="content_measure-item">
+              <span class="color-box" data-color="blue"></span>
+              <a href="#measure_6" class="content_measure_link"
+                >Bijvriendelijke oeverzone (vijver of poel)</a
+              >
+            </li>
+            <li class="content_measure-item">
+              <span class="color-box" data-color="blue"></span>
+              <a href="#measure_7" class="content_measure_link"
+                >Bijvriendelijke waterbuer of WADI</a
+              >
+            </li>
+          </ul>
+
+          <div class="content_details">
+            <div class="go-back" hidden>
+              <input type="checkbox" class="section_title_input" />
+              <div class="sm-box section_dropdown">
+                <img src="./assets/arrow.svg" alt="arrow" />
+              </div>
+              <label class="section_title">
+                Naar overzicht
+              </label>
+            </div>
+
+            <div class="content_measure_details" id="measure_1">
+              <div class="content_measure_head">
+                <h2 class="content_measure_title">
+                  Inzaaien van een bloemenrand
+                </h2>
+                <div class="content_measure_print">
+                  <a href="javascript:window.print()"
+                    >Afdrukken <img src="./assets/print-icon.svg" alt=""
+                  /></a>
+                </div>
+              </div>
+
+              <img
+                src="./assets/main-image-of-measure.jpg"
+                alt="measure"
+                class="content_measure_image"
+              />
+
+              <div>
+                <input
+                  type="checkbox"
+                  id="section_1"
+                  class="section_title_input"
+                />
+                <div class="sm-box section_dropdown">
+                  <img src="./assets/arrow.svg" alt="arrow" />
+                </div>
+                <label for="section_1" class="section_title">
+                  Introductie
+                </label>
+                <div class="section_content">
+                  <p>
+                    Een bloemrijke vegetatie kan bij een juiste aanleg en goed
+                    beheer een belangrijke voedselbron vormen voor wilde
+                    bestuivers. Inheemse bloemenmengsels met gebiedseigen
+                    soorten sluiten het beste aan bij de eisen van de lokaal
+                    voorkomende wilde bestuivers. De bodem is een belangrijke
+                    factor in de slagingskans van de aanleg periode. Deze kan
+                    beter niet te voedselrijk zijn en moet goed voorbereid
+                    worden (zaaiklaar zijn).
+                  </p>
+                  <p>
+                    Bloemrijke vegetaties zijn er in verschillende vormen en met
+                    verschillende doelen. Zo kan deze ook een rol spelen bij de
+                    beheersing van plaagdieren in gewassenteelt. Bloemstroken
+                    worden vaak langs akkers, wegbermen of in parken of
+                    woonwijken aangelegd. Een bloemenveld is een breder perceel
+                    zoals in half-natuurlij
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <input
+                  type="checkbox"
+                  id="section_2"
+                  class="section_title_input"
+                />
+                <div class="sm-box section_dropdown">
+                  <img src="./assets/arrow.svg" alt="arrow" />
+                </div>
+                <label for="section_2" class="section_title">
+                  Gewenste vegetatie
+                </label>
+                <div class="section_content">
+                  <p>
+                    Op basis van de planten die van nature in uw regio
+                    voorkomen, en welke daarvan het meest relevant zijn voor de
+                    bestuivers in uw regio, adviseren we om toe te werken naar
+                    een vegetatie met de plantensoorten uit onderstaande lijst.
+                    Onderzoek waar mogelijk eerst of deze soorten nu al
+                    voorkomen op de plek waar u een maatregel wilt gaan nemen.
+                    Zo ja, dan is het beter om deze soorten te bevorderen via
+                    het juiste beheer. Een gericht beheer-advies is ook
+                    beschikbaar.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <input
+                  type="checkbox"
+                  id="section_3"
+                  class="section_title_input"
+                />
+                <div class="sm-box section_dropdown">
+                  <img src="./assets/arrow.svg" alt="arrow" />
+                </div>
+                <label for="section_3" class="section_title">
+                  Meest geschikte soorten
+                </label>
+
+                <div class="section_content">
+                  <div class="options-filter-toggler">
+                    <input
+                      type="radio"
+                      name="filter-option"
+                      id="simple"
+                      class="toggler_option"
+                      checked
+                    />
+                    <label for="simple">Eenvoudig</label>
+
+                    <input
+                      type="radio"
+                      name="filter-option"
+                      id="extended"
+                      class="toggler_option"
+                    />
+                    <label for="extended">Uitgebreid</label>
+                  </div>
+
+                  <div class="options-filter">
+                    <div class="dropdown">
+                      <label>Bloei :</label>
+                      <div class="dropdown_button">
+                        <span class="dropdown_picked-option">Meerjarig</span>
+                        <img src="./assets/dropdown-arrow.svg" alt="dropdown" />
+                      </div>
+
+                      <div class="dropdown_menu-box">
+                        <ul class="dropdown_menu">
+                          <li data-name="profile" class="dropdown_item">
+                            Alle
+                          </li>
+                          <li data-name="dashboard" class="dropdown_item">
+                            Eenjarig
+                          </li>
+                          <li data-name="activity" class="dropdown_item">
+                            Meerjarig
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="dropdown">
+                      <label>Grond :</label>
+                      <div class="dropdown_button">
+                        <span class="dropdown_picked-option"
+                          >Matig voedselarm</span
+                        >
+                        <img src="./assets/dropdown-arrow.svg" alt="dropdown" />
+                      </div>
+
+                      <div class="dropdown_menu-box">
+                        <ul class="dropdown_menu">
+                          <li data-name="profile" class="dropdown_item">
+                            Matig voedselarm
+                          </li>
+                          <li data-name="dashboard" class="dropdown_item">
+                            Voedselarm
+                          </li>
+                          <li data-name="activity" class="dropdown_item">
+                            Zeer voedselrijk
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <table class="species-table">
+                    <tr>
+                      <th colspan="2" class="right">Kleur</th>
+                      <th>Bloeiperiode</th>
+                    </tr>
+                    <tr>
+                      <td colspan="2"></td>
+                      <td>
+                        <div class="months">
+                          <span class="month-box letter">J</span>
+                          <span class="month-box letter">F</span>
+                          <span class="month-box letter">M</span>
+                          <span class="month-box letter">A</span>
+                          <span class="month-box letter">M</span>
+                          <span class="month-box letter">J</span>
+                          <span class="month-box letter">J</span>
+                          <span class="month-box letter">A</span>
+                          <span class="month-box letter">S</span>
+                          <span class="month-box letter">O</span>
+                          <span class="month-box letter">N</span>
+                          <span class="month-box letter">D</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">Nieskruid (Helleborus)</a></td>
+                      <td>
+                        <span
+                          class="specie_color-box"
+                          style="background-color: rgb(165, 236, 213);"
+                        ></span>
+                      </td>
+                      <td>
+                        <div class="months">
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">Anemoon (Anemone)</a></td>
+                      <td>
+                        <span
+                          class="specie_color-box"
+                          style="background-color: rgb(255, 241, 163);"
+                        ></span>
+                      </td>
+                      <td>
+                        <div class="months">
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">Dovenetel (Lamium spp.)</a></td>
+                      <td>
+                        <span
+                          class="specie_color-box"
+                          style="background-color: rgb(211, 163, 255);"
+                        ></span>
+                      </td>
+                      <td>
+                        <div class="months">
+                          <span class="month-box filled"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box filled"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                          <span class="month-box"></span>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <input
+                  type="checkbox"
+                  id="section_4"
+                  class="section_title_input"
+                />
+                <div class="sm-box section_dropdown">
+                  <img src="./assets/arrow.svg" alt="arrow" />
+                </div>
+                <label for="section_4" class="section_title">
+                  Vuistregels voor aanleg</label
+                >
+                <div class="section_content">
+                  <h4 class="section_sub-title">Timing</h4>
+                  <p>
+                    Zaaien kan in principe jaarrond, maar sommige periodes
+                    hebben de voorkeur. Bij zaaien in het najaar kunnen
+                    bijvoorbeeld winterannuellen al kiemen, en is er minder kans
+                    op onkruid dan bij zaaien in het voorjaar. Bij zaaien in het
+                    voorjaar (februari-maart voor éénjarige akkerkruiden) moet
+                    mogelijk wat extra tijd worden ingepland voor het toepassen
+                    van een vals zaaibed.
+                  </p>
+                  <h4 class="section_sub-title">Voorbewerking</h4>
+                  <p>
+                    Bekijk eerst welke gewenste plantensoorten al aanwezig zijn
+                    en of deze kunnen blijven staan, soms is aangepast beheer
+                    beter dan nieuwe aanleg.
+                  </p>
+                  <p>
+                    Ingezaaide bloemen vestigen zich niet goed in grasmatten of
+                    dichte vegetatie. Verwijder deze oppervlakkig (5 cm) en
+                    verstoor de grond daarbij zo min mogelijk (om activering van
+                    ongewenste zaden in de bodem te voorkomen).
+                  </p>
+                  <p>
+                    Verwijder wortels van hardnekkige wortelonkruiden
+                    (handmatig).
+                  </p>
+                  <p>
+                    In de bodem is vaak een zaadbank aanwezig van ongewenste
+                    onkruiden die kiemen na verstoring van de bodem. Door een
+                    vals-zaaibed te creëren wordt de overlast beperkt. Wacht na
+                    het klaarmaken van het zaaibed tot deze soorten kiemen en
+                    schoffel deze ondiep af. Herhaal dit eventueel voor beter
+                    resultaat. Bij de aanleg van een meerjarig kruidenrijk
+                    grasland is het toepassen van een vals-zaaibed niet nodig.
+                  </p>
+                  <p>
+                    Bemesting is bij een bloemrijke vegetatie niet gewenst.
+                  </p>
+                  <h4 class="section_sub-title">Aanplant/inzaai</h4>
+                  <p>
+                    Verdun het zaadmengsel met grond om het gelijkmatiger te
+                    verdelen over het oppervlakte. Bijvoorbeeld één kruiwagen
+                    lichtvochtig zand op 1 kilo zaad.
+                  </p>
+                  <p>
+                    De aanbevolen hoeveelheid zaden per vierkante meter hangt af
+                    van de (bodem)omstandigheden. Dit varieert van 2 gram per m2
+                    bij een droge, dichte grondsoort tot 1 gram op 1-1,5 m2 bij
+                    vochtige en voedselrijke bodems. Vraag een leverancier of
+                    specialist eventueel om advies.
+                  </p>
+                  <p>
+                    Zaai het liefst handmatig, zaaimachines zijn vaak ongeschikt
+                    door de diversiteit aan zaden. Het mengsel wordt dan niet
+                    homogeen verspreid. Tevens kan het gebruik van zware
+                    machines de bodem verdichten.
+                  </p>
+                  <p>
+                    Zaai het mengsel op kale grond en nooit dieper dan de dikte
+                    van de zaden. Eventueel licht aanharken- of rollen, maar
+                    nooit met zwaar materieel.
+                  </p>
+                  <p>
+                    Om in het eerste jaar na aanleg meteen een bloeiend
+                    resultaat te krijgen kan tot maximaal 20% eenjarig bloemzaad
+                    worden toegevoegd aan het mengsel. Bij een hoger aandeel
+                    eenjarige bloemen concurreren deze de meerjarige planten
+                    weg. Het tweede jaar na aanplant kan dit, als de eenjarige
+                    grotendeels weg zijn en de meerjarigen nog in ontwikkeling
+                    zijn, zorgen tot teleurstelling bij het publiek.
+                  </p>
+                  <h4 class="section_sub-title">
+                    Nazorg
+                    <span class="text"
+                      >(beheer in eerste spaneriode na aanleg om vestiging te
+                      bevorderen)
+                    </span>
+                  </h4>
+                  <p>
+                    Bij zaaien in voorjaar kan soms veel onkruid opkomen. (Om
+                    dit te voorkomen: valszaaibed-methode toepassen.) Wanneer de
+                    grond (bijna) niet meer te zien is (kiemplanten krijgen te
+                    weinig licht), kan dit eventueel op 5 cm afgemaaid en
+                    afgevoerd worden. Bij zaaien in nazomer/herfst is dit vaak
+                    niet nodig en kan vanaf het volgende jaar begonnen worden
+                    met regulier beheer.
+                  </p>
+                  <p>
+                    Ratelaar (Rhinanthus) is een half-parasiet op grassen en kan
+                    zo vergrassing van een bloemenweide enigszins tegengaan, met
+                    name op niet al te voedselrijke bodems. Zaaien met het
+                    bloemenmengsel, of bijzaaien in de late zomer -late herfst;
+                    in dat geval zorgen dat er ruimte op de bodem is voor de
+                    zaden om te bereiken.
+                  </p>
+                  <h4 class="section_sub-title">Waarde voor de toekomst</h4>
+                  <p>
+                    Blijvend bijvriendelijk beheer is essentieel om de waarde
+                    voor de toekomst te behouden. Een gericht a
+                    <a href="#">beheer-advies</a> is ook beschikbaar.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="content_measure_details" id="measure_2">
+              <h2 class="content_measure_title">second section</h2>
+
+              <img
+                src="./assets/p1-blauwe-metselbij.jpg"
+                alt="measure"
+                class="content_measure_image"
+              />
+
+              <div>
+                <input
+                  type="checkbox"
+                  id="section_6"
+                  class="section_title_input"
+                />
+                <div class="sm-box section_dropdown">
+                  <img src="./assets/arrow.svg" alt="arrow" />
+                </div>
+                <label for="section_6" class="section_title">
+                  Introductie
+                </label>
+                <div class="section_content">
+                  <p>
+                    Een bloemrijke vegetatie kan bij een juiste aanleg en goed
+                    beheer een belangrijke voedselbron vormen voor wilde
+                    bestuivers. Inheemse bloemenmengsels met gebiedseigen
+                    soorten sluiten het beste aan bij de eisen van de lokaal
+                    voorkomende wilde bestuivers. De bodem is een belangrijke
+                    factor in de slagingskans van de aanleg periode. Deze kan
+                    beter niet te voedselrijk zijn en moet goed voorbereid
+                    worden (zaaiklaar zijn).
+                  </p>
+                  <p>
+                    Bloemrijke vegetaties zijn er in verschillende vormen en met
+                    verschillende doelen. Zo kan deze ook een rol spelen bij de
+                    beheersing van plaagdieren in gewassenteelt. Bloemstroken
+                    worden vaak langs akkers, wegbermen of in parken of
+                    woonwijken aangelegd. Een bloemenveld is een breder perceel
+                    zoals in half-natuurlij
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="spotlight">
+        <div class="title-bar">
+          <h3>IN UW REGIO</h3>
+        </div>
+      </section>
+
+      <!-- footer -->
+      <footer class="footer">
+        <div class="footer_links">
+          <a href="http://kennisimpulsbestuivers.nl">Een initiatief van</a>
+          <a href="http://kennisimpulsbestuivers.nl"
+            >Kennisimpulsbestuivers.nl</a
+          >
+        </div>
+        <div class="footer_sponsors">
+          <a href="https://www.wur.nl" class="footer_sponsor-link">
+            <img
+              src="./assets/footer-logo-1-wur.svg"
+              alt=""
+              class="footer_sponsor-img"
+            />
+          </a>
+          <a href="https://www.naturalis.nl" class="footer_sponsor-link">
+            <img
+              src="./assets/footer-logo-2-naturalis.svg"
+              alt=""
+              class="footer_sponsor-img"
+          /></a>
+          <a href="https://www.eis-nederland.nl" class="footer_sponsor-link"
+            ><img
+              src="./assets/footer-logo-3-eis.svg"
+              alt=""
+              class="footer_sponsor-img"
+            />
+          </a>
+          <a
+            href="https://www.rijksoverheid.nl/ministeries/ministerie-van-landbouw-natuur-en-voedselkwaliteit"
+            class="footer_sponsor-link"
+          >
+            <img
+              src="./assets/footer-logo-4-lnv.svg"
+              alt=""
+              class="footer_sponsor-img"
+            />
+          </a>
+          <a
+            href="https://www.bestuivers.nl/nationalebijenstrategie"
+            class="footer_sponsor-link"
+          >
+            <img
+              src="./assets/footer-logo-5-nb.svg"
+              alt=""
+              class="footer_sponsor-img"
+            />
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
