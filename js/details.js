@@ -131,6 +131,112 @@ togglerOptions.forEach((option) => {
   })
 })
 
+/* table */
+const table = select('table.species-table')
+const months = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D']
+
+// render the table top header
+function renderTableHeader() {
+  // table top
+  const tableTop = document.createElement('tr')
+  const Kleur = document.createElement('th')
+  Kleur.setAttribute('colspan', '2')
+  Kleur.classList.add('right')
+  Kleur.textContent = 'Kleur'
+
+  const Bloeiperiode = document.createElement('th')
+  Bloeiperiode.textContent = 'Bloeiperiode'
+
+  tableTop.appendChild(Kleur)
+  tableTop.appendChild(Bloeiperiode)
+
+  table.appendChild(tableTop)
+
+
+  // table monthes
+  const tableMonths = document.createElement('tr')
+
+  const emptyCol = document.createElement('td')
+  emptyCol.setAttribute('colspan', '2')
+
+  const monthsCol = document.createElement('td')
+  const monthsDiv = document.createElement('div')
+  monthsDiv.classList.add('months')
+
+  months.forEach(month => {
+    const monthBox = document.createElement('span')
+    monthBox.classList.add('month-box')
+    monthBox.classList.add('letter')
+    monthBox.textContent = month
+
+    monthsDiv.appendChild(monthBox)
+  })
+
+  monthsCol.appendChild(monthsDiv)
+
+  tableMonths.appendChild(emptyCol)
+  tableMonths.appendChild(monthsCol)
+
+  table.appendChild(tableMonths)
+}
+renderTableHeader()
+
+// render table function based on params
+function renderTableData(params) {
+  const pre = select(`.table-data[data-table="${params}"]`)
+  const tableArray = JSON.parse(pre.textContent)
+
+  // remove old table content
+  table.textContent = ''
+
+  tableArray.forEach(obj => {
+    const specieRow = document.createElement('tr')
+    // specie link column
+    const specieLinkCol = document.createElement('td')
+    const specieLink = document.createElement('a')
+    specieLink.setAttribute('href', obj.link)
+    specieLink.textContent = obj.specie
+
+    specieLinkCol.appendChild(specieLink)
+
+    // specie color box
+    const colorCol = document.createElement('td')
+    const colorBox = document.createElement('span')
+    colorBox.classList.add('specie_color-box')
+    colorBox.style = `background-color: ${obj.color}`
+
+    colorCol.appendChild(colorBox)
+
+    // species months
+    const monthsCol = document.createElement('td')
+    const monthsDiv = document.createElement('div')
+    monthsDiv.classList.add('months')
+    months.forEach(month => {
+      const monthBox = document.createElement('span')
+      monthBox.classList.add('month-box')
+
+      monthsDiv.appendChild(monthBox)
+    })
+
+    const monthBoxes = selectAll('span.month-box', monthsDiv)
+
+    obj.months.forEach(month => {
+      monthBoxes[month - 1].classList.add('filled')
+    })
+
+    monthsCol.appendChild(monthsDiv)
+
+
+    // append children to specie
+    specieRow.appendChild(specieLinkCol)
+    specieRow.appendChild(colorCol)
+    specieRow.appendChild(monthsCol)
+
+    table.appendChild(specieRow)
+  })
+}
+renderTableData('1')
+
 /* dropdown */
 const dropdownsButtons = selectAll('.dropdown_button')
 const dropdownItems = selectAll('.dropdown_item')
@@ -147,5 +253,7 @@ dropdownItems.forEach((item) => {
   item.onclick = () => {
     select('.dropdown_picked-option', dropdown).textContent = item.textContent
     toggleClass('opened', dropdown)
+
+    renderTableData(item.getAttribute('data-table'))
   }
 })

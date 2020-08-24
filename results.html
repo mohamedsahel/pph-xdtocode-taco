@@ -346,13 +346,13 @@
 
                       <div class="dropdown_menu-box">
                         <ul class="dropdown_menu">
-                          <li data-name="profile" class="dropdown_item">
+                          <li class="dropdown_item" data-table='1'>
                             Alle
                           </li>
-                          <li data-name="dashboard" class="dropdown_item">
+                          <li class="dropdown_item" data-table='2'>
                             Eenjarig
                           </li>
-                          <li data-name="activity" class="dropdown_item">
+                          <li class="dropdown_item" data-table='3'>
                             Meerjarig
                           </li>
                         </ul>
@@ -370,13 +370,13 @@
 
                       <div class="dropdown_menu-box">
                         <ul class="dropdown_menu">
-                          <li data-name="profile" class="dropdown_item">
+                          <li class="dropdown_item" data-table='1'>
                             Matig voedselarm
                           </li>
-                          <li data-name="dashboard" class="dropdown_item">
+                          <li class="dropdown_item"  data-table='2'>
                             Voedselarm
                           </li>
-                          <li data-name="activity" class="dropdown_item">
+                          <li class="dropdown_item"  data-table='3'>
                             Zeer voedselrijk
                           </li>
                         </ul>
@@ -384,106 +384,75 @@
                     </div>
                   </div>
 
+                  <pre class="table-data" style="display: none;" data-table="1" hidden>
+                    [{
+                      "specie": "Nieskruid (Helleborus)",
+                      "link": "#",
+                      "color": "rgb(165, 236, 213)",
+                      "months": [1, 2, 3]
+                    },
+                    {
+                      "specie": "Anemoon (Anemone)",
+                      "link": "#",
+                      "color": "rgb(255, 241, 163)",
+                      "months": [3, 4, 5, 6]
+                    },
+                    {
+                      "specie": "Dovenetel (Lamium spp.)",
+                      "link": "#",
+                      "color": "rgb(211, 163, 255)",
+                      "months": [9, 10, 11, 12]
+                    }
+                    ]
+                  </pre>
+                  <pre class="table-data" style="display: none;" data-table="2" hidden>
+                    [
+                    {
+                      "specie": "Dovenetel (Lamium spp.)",
+                      "link": "#",
+                      "color": "rgb(211, 163, 255)",
+                      "months": [9, 10, 11, 12]
+                    },
+                    {
+                      "specie": "Nieskruid (Helleborus)",
+                      "link": "#",
+                      "color": "rgb(165, 236, 213)",
+                      "months": [1, 2, 3]
+                    },
+                    {
+                      "specie": "Anemoon (Anemone)",
+                      "link": "#",
+                      "color": "rgb(255, 241, 163)",
+                      "months": [3, 4, 5, 6]
+                    }
+                    ]
+                  </pre>
+                  <pre class="table-data" style="display: none;" data-table="3" hidden>
+                    [
+                    {
+                      "specie": "Anemoon (Anemone)",
+                      "link": "#",
+                      "color": "rgb(255, 241, 163)",
+                      "months": [3, 4, 5, 6]
+                    },
+                    {
+                      "specie": "Dovenetel (Lamium spp.)",
+                      "link": "#",
+                      "color": "rgb(211, 163, 255)",
+                      "months": [9, 10, 11, 12]
+                    },
+                    {
+                      "specie": "Nieskruid (Helleborus)",
+                      "link": "#",
+                      "color": "rgb(165, 236, 213)",
+                      "months": [1, 2, 3]
+                    }
+                    ]
+                  </pre>
+
                   <table class="species-table">
-                    <tr>
-                      <th colspan="2" class="right">Kleur</th>
-                      <th>Bloeiperiode</th>
-                    </tr>
-                    <tr>
-                      <td colspan="2"></td>
-                      <td>
-                        <div class="months">
-                          <span class="month-box letter">J</span>
-                          <span class="month-box letter">F</span>
-                          <span class="month-box letter">M</span>
-                          <span class="month-box letter">A</span>
-                          <span class="month-box letter">M</span>
-                          <span class="month-box letter">J</span>
-                          <span class="month-box letter">J</span>
-                          <span class="month-box letter">A</span>
-                          <span class="month-box letter">S</span>
-                          <span class="month-box letter">O</span>
-                          <span class="month-box letter">N</span>
-                          <span class="month-box letter">D</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="#">Nieskruid (Helleborus)</a></td>
-                      <td>
-                        <span
-                          class="specie_color-box"
-                          style="background-color: rgb(165, 236, 213);"
-                        ></span>
-                      </td>
-                      <td>
-                        <div class="months">
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="#">Anemoon (Anemone)</a></td>
-                      <td>
-                        <span
-                          class="specie_color-box"
-                          style="background-color: rgb(255, 241, 163);"
-                        ></span>
-                      </td>
-                      <td>
-                        <div class="months">
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="#">Dovenetel (Lamium spp.)</a></td>
-                      <td>
-                        <span
-                          class="specie_color-box"
-                          style="background-color: rgb(211, 163, 255);"
-                        ></span>
-                      </td>
-                      <td>
-                        <div class="months">
-                          <span class="month-box filled"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box filled"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                          <span class="month-box"></span>
-                        </div>
-                      </td>
-                    </tr>
                   </table>
+
                 </div>
               </div>
 
