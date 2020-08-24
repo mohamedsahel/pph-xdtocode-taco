@@ -116,6 +116,7 @@ table section
 ***************/
 const togglerOptions = selectAll('.toggler_option')
 const optionsFilter = select('.options-filter')
+let currentTable = '1'
 
 togglerOptions.forEach((option) => {
   if (option.checked && option.getAttribute('id') === 'simple') {
@@ -125,8 +126,10 @@ togglerOptions.forEach((option) => {
   option.addEventListener('click', (e) => {
     if (e.target.getAttribute('id') === 'simple') {
       optionsFilter.hidden = true
+      renderTableData('1', true)
     } else {
       optionsFilter.hidden = false
+      renderTableData(currentTable)
     }
   })
 })
@@ -181,10 +184,14 @@ function renderTableHeader() {
 }
 renderTableHeader()
 
-// render table function based on params
-function renderTableData(params) {
-  const pre = select(`.table-data[data-table="${params}"]`)
+// render table function based on param
+function renderTableData(param, changeCurrent) {
+  const pre = select(`.table-data[data-table="${param}"]`)
   const tableArray = JSON.parse(pre.textContent)
+
+  if(!changeCurrent) {
+    currentTable = param
+  }
 
   // remove old table content
   table.textContent = ''
