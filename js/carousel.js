@@ -12,18 +12,20 @@ const Carousel = function ({
   this.firstSlide = this.slidesWrapper.firstElementChild
   this.slidesCount = this.slidesWrapper.childElementCount
 
-  this.slideWidth = getStyle(this.container, 'width')
+  this.slideWidth
   this.currentWrapperRight = getStyle(this.slidesWrapper, 'right')
   this.slideFrom
   this.canSlide = true // to prevent sliding while sliding
   this.currentSlide = 0
 
   this.slideCarousel = (dir, withTransition) => {
+
+    this.slideWidth = this.currentSlide === 0 ? +getStyle(this.container, 'width') + 4.25 : getStyle(this.container, 'width')
     this.slideFrom = dir
     const dirSign = dir === 'left' ? -1 : 1
     this.currentSlide += dirSign
     const newcurrentWrapperRight =
-      +this.currentWrapperRight + +this.slideWidth * dirSign
+    +this.currentWrapperRight + +this.slideWidth * dirSign
 
     if (withTransition) {
       this.slidesWrapper.style.transition = 'all 0.2s ease-in-out'
@@ -76,8 +78,7 @@ const Carousel = function ({
     window.addEventListener('resize', () => {
       this.slideWidth = getStyle(this.container, 'width')
       this.currentWrapperRight = this.slideWidth * this.currentSlide
-      this.slidesWrapper.style.right =
-        this.slideWidth * this.currentSlide + 'px'
+      this.slidesWrapper.style.right = this.slideWidth * this.currentSlide + 'px'
     })
   }
 }

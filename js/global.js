@@ -9,9 +9,9 @@ const selectAll = (selector, parent) => {
 }
 
 const getStyle = (element, property) => {
-  const carouselStyles = getComputedStyle(element)
-  const carouselWidth = carouselStyles.getPropertyValue(property)
-  return carouselWidth.split('px').join('')
+  const styles = getComputedStyle(element)
+  const value = styles.getPropertyValue(property)
+  return value.split('px').join('')
 }
 
 const toggleClass = (className, element) => {
