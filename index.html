@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />   
+<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/global.css" media="screen" />
 <link rel="stylesheet" href="css/index.css" media="screen" />
 <link rel="stylesheet" href="css/print.css" media="print" />
-    
-<script src="./js/global.js" defer></script> 
-<script src="./js/carousel.js" defer></script> 
+
+<script src="./js/global.js" defer></script>
+<script src="./js/carousel.js" defer></script>
+<script src="./js/form.js" defer></script>
 <script src="./js/index.js" defer></script>
 <!-- generics -->
 <link rel="icon" href="./assets/favicons/favicon-32.png" sizes="32x32">
@@ -39,7 +40,7 @@
 </head>
 <body>
 <div class="loader"> <img src="./assets/logo.svg" alt=""> </div>
-<div class="layout"> 
+<div class="layout">
   <!-- header navgation -->
   <div class="nav_logo-flag"> <img src="./assets/logo.svg" alt="logo" class="nav_logo" />
     <h3 class="nav_flag">Hulp voor bestuivers</h3>
@@ -53,7 +54,7 @@
       </ul>
     </nav>
   </header>
-  
+
   <!-- hero -->
   <section class="hero">
     <div class="hero_logo-flag"> <img src="./assets/logo.svg" alt="logo" class="hero_logo" />
@@ -64,7 +65,7 @@
         Nederland </h3>
     </div>
   </section>
-  
+
   <!-- content section -->
   <section class="content">
     <p class="introduction"> Veel terreinen in Nederland zijn geschikt voor voedsel en als
@@ -73,7 +74,7 @@
       van beplantingen (en andere maatregelen) die bestuivers ten goede
       komen. </p>
     <h3 class="content_h3">Advies op maat in drie stappen</h3>
-    
+
     <!-- search form -->
     <form action="./results.html" method="GET" class="search_form">
       <!-- step 1 -->
@@ -81,24 +82,25 @@
         <div class="step_input">
           <div class="sm-box"> <span class="step_number">1</span> </div>
           <input
-                type="text"
-                name="postcode"
-                id="postcode"
-                placeholder="Postcode"
-              />
+            type="text"
+            name="postcode"
+            id="postcode"
+            placeholder="Postcode"
+          />
         </div>
         <p class="input_error"> Geen geldige postcode. Probeer een andere. </p>
         <p class="input_explanation"> Met uw postcode kunnen we het landschapstype bepalen en of de
           locatie in de buurt van een natuurgebied ligt. Beide hebben effect op de maatregelen die u kunt treffen en op de soorten die in de buurt voorkomen. </p>
-        <button class="button next" disabled>Volgende</button>
-        <div class="step_input step_resume">
-          <div class="sm-box"> <span class="step_number">1</span> </div>
-          <div class="step_picked-value"> <span></span> </div>
-          <img src="./assets/edit-icon.svg" alt="" class="step_edit-icon" /> </div>
-      </div>
-      
+          <div class="step_input step_resume">
+            <div class="sm-box"> <span class="step_number">1</span> </div>
+            <div class="step_picked-value"> <span></span> </div>
+            <img src="./assets/edit-icon.svg" alt="" class="step_edit-icon" />
+          </div>
+          <button class="button next" type="button" disabled>Volgende</button>
+        </div>
+
       <!-- step 2 -->
-      <div class="form_step hidden">
+      <div class="form_step ">
         <div class="step_input">
           <div class="sm-box"> <span class="step_number">2</span> </div>
           <label class="step_title">Om welk type terrein gaat het?</label>
@@ -166,15 +168,17 @@
             <label for="choice_7">Weg- of spoorberm</label>
           </p>
         </div>
-        <button class="button next" disabled>Volgende</button>
         <div class="step_input step_resume">
           <div class="sm-box"> <span class="step_number">2</span> </div>
           <div class="step_picked-value"> <span></span> </div>
-          <img src="./assets/edit-icon.svg" alt="" class="step_edit-icon" /> </div>
+          <img src="./assets/edit-icon.svg" alt="" class="step_edit-icon" />
+        </div>
+
+        <button class="button next" type="button" disabled>Volgende</button>
       </div>
-      
+
       <!-- step 3 -->
-      <div class="form_step hidden">
+      <div class="form_step ">
         <div class="step_input">
           <div class="sm-box"> <span class="step_number">3</span> </div>
           <label class="step_title">Over welke situatie wilt u advies?</label>
@@ -209,21 +213,28 @@
             <label for="situatie_3">Aanleg van nestelplekken</label>
           </p>
         </div>
-        <button class="button next" type="submit" disabled>Zoek</button>
+
         <div class="step_input step_resume">
           <div class="sm-box"> <span class="step_number">3</span> </div>
-          <div class="step_picked-value"> <span
-                  >Beheer van bestaande situatie op een bestuiver-vriendelijke
-            manier </span> </div>
-          <img src="./assets/edit-icon.svg" alt="" class="step_edit-icon" /> </div>
+          <div class="step_picked-value"> <span></span> </div>
+          <img src="./assets/edit-icon.svg" alt="" class="step_edit-icon" />
+        </div>
+
+        <div class="submit-loader" >
+          <img class="submit-loader_spinner" src="./assets/loading-spinner.svg" alt="spinner">
+          <p class="submit-loader_text" >Ean ogenblik, er wordt gezocht.</p>
+        </div>
+
+        <button class="button next" type="submit" disabled>Zoek</button>
+        
       </div>
     </form>
   </section>
-  
+
   <!-- spotlight carousel -->
   <section class="spotlight">
     <div class="carousel">
-      <div class="carousel_slides"> 
+      <div class="carousel_slides">
         <!-- slide 1 -->
         <div class="carousel_slide">
           <div class="title-bar">
@@ -236,7 +247,7 @@
               afgesloten met zo’n lemen wandje. </p>
           </div>
         </div>
-        
+
         <!-- slide 2 -->
         <div class="carousel_slide">
           <div class="title-bar">
@@ -248,7 +259,7 @@
               uiterlijk van stekende insecten na (mimicry). </p>
           </div>
         </div>
-        
+
         <!-- slide 3 -->
         <div class="carousel_slide">
           <div class="title-bar">
@@ -262,7 +273,7 @@
               maanvlekken langs de achterrand. </p>
           </div>
         </div>
-        
+
         <!-- slide 4 -->
         <div class="carousel_slide">
           <div class="title-bar">
@@ -274,7 +285,7 @@
               guldenroede (Solidago), helpen bij de bestuiving. </p>
           </div>
         </div>
-        
+
         <!-- slide 5 -->
         <div class="carousel_slide">
           <div class="title-bar">
@@ -305,7 +316,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- footer -->
   <footer class="footer">
     <div class="footer_links"> <a href="http://kennisimpulsbestuivers.nl">Een initiatief van</a> <a href="http://kennisimpulsbestuivers.nl">Kennisimpulsbestuivers.nl</a> </div>

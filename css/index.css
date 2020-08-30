@@ -101,6 +101,7 @@
   margin-bottom: 3rem;
 }
 
+
 .search_form:not(.opened) .form_step.hidden {
   display: none;
 }
@@ -193,6 +194,10 @@ input#postcode {
   display: block;
 }
 
+.form_step.editing .button:not([type='submit']) {
+  display: none;
+}
+
 .step_picked-value {
   position: relative;
   margin-left: 3.6rem;
@@ -244,8 +249,8 @@ input#postcode {
   position: absolute;
   left: 0;
   top: 0;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 20px;
+  height: 20px;
   border: 1.5px solid rgb(51, 51, 51);
   border-radius: 100%;
   background: #fff;
@@ -254,12 +259,12 @@ input#postcode {
 [type='radio']:checked + label:after,
 [type='radio']:not(:checked) + label:after {
   content: '';
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 10px;
+  height: 10px;
   background: var(--main-color);
   position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
+  top: 5px;
+  left: 5px;
   border-radius: 100%;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -275,6 +280,28 @@ input#postcode {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+
+
+.submit-loader {
+  display: none;
+}
+
+.search_form.submitting button[type="submit"] {
+  display: none;
+}
+
+.search_form.submitting .submit-loader {
+  display: flex;
+  align-items: center;
+}
+
+.submit-loader_spinner {
+  width: 8rem;
+}
+
+.submit-loader_text {
+  margin: 0rem;
 }
 
 

@@ -3,7 +3,7 @@ store search params in the local storage
 *****************/
 const queryString = window.location.search
 const search_params = new URLSearchParams(queryString)
-const entries = search_params.entries()
+const entries = Array.from(search_params.entries())
 const paramsObj = {}
 
 for (const entry of entries) {
@@ -11,6 +11,7 @@ for (const entry of entries) {
 }
 
 const chosenParamsBar = select('.content_chosen-params')
+
 
 if (entries.length) {
   selectAll('p', chosenParamsBar)[0].textContent = `${
@@ -60,4 +61,3 @@ const doughnutChart = new Piechart({
   doughnutHoleSize: 0.58,
 })
 doughnutChart.draw()
-
