@@ -1,114 +1,133 @@
+function getMeasureContent(_fgr, _infopagina) {
+  url = 'teksten.aspx?fgr=' + _fgr + '&infopagina=' + _infopagina
+
+  const httpRequest = new XMLHttpRequest()
+  httpRequest.onreadystatechange = function (data) {
+    document.getElementById('measure_content').innerHTML = data
+  }
+  httpRequest.open('GET', url)
+  httpRequest.send()
+}
+
+
+
+if (false) {
 /***************
   Render the Measure details
 ****************/
-const layout = select('.layout')
-const hero = select('.hero')
-const contentWrapper = select('.content')
-const contentWrapperChildren = selectAll('.content > *')
-const mainContent = select('.main_content')
-const measuresLinks = selectAll('.content_measure_link')
-const contentDetails = select('.content_details')
-const subContentDetailsList = selectAll(
-  '.content_measure_details',
-  contentDetails
-)
+// const layout = select('.layout')
+// const hero = select('.hero')
+// const contentWrapper = select('.content')
+// const contentWrapperChildren = selectAll('.content > *')
+// const mainContent = select('.main_content')
+// const measuresLinks = selectAll('.content_measure_link')
+// const contentDetails = select('.content_details')
+// const subContentDetailsList = selectAll(
+//   '.content_measure_details',
+//   contentDetails
+// )
 
-// hide all content details after page loading
-const hideAll = (list) => {
-  list.forEach((subContent) => (subContent.hidden = true))
+// // hide all content details after page loading
+// const hideAll = (list) => {
+//   list.forEach((subContent) => (subContent.hidden = true))
+// }
+// const showAll = (list) => {
+//   list.forEach((subContent) => (subContent.hidden = false))
+// }
+
+// // hideAll(subContentDetailsList)
+
+// measuresLinks.forEach((link) => {
+//   const sectionDetailsId = link.getAttribute('href')
+//   link.addEventListener('click', (e) => {
+//     e.preventDefault()
+
+//     // hide all content details
+//     hideAll(subContentDetailsList)
+
+//     // change the style of list items
+//     if (link.classList.contains('current')) return
+//     measuresLinks.forEach((link) => {
+//       link.classList.remove('current')
+//     })
+//     link.classList.add('current')
+
+//     // change image position
+//     const goBackBtn = select('.go-back', contentDetails)
+//     const subContentDetails = select(sectionDetailsId, contentDetails)
+//     const measuresList = select('.content_measures-list')
+//     const mainImage = select('.content_measure_image', subContentDetails)
+//     mainImage.hidden = false
+//     const clonedMainImage = mainImage.cloneNode(true)
+
+//     // handle go back button click
+//     goBackBtn.onclick = () => {
+//       contentWrapperChildren.forEach((el) => {
+//         contentWrapper.appendChild(el)
+//         contentWrapper.classList.remove('full')
+//       })
+//       mainContent.appendChild(contentDetails)
+//       hideAll(subContentDetailsList)
+//       goBackBtn.hidden = true
+//       link.classList.remove('current')
+//       if (measuresList.lastChild.nodeName === 'IMG') {
+//         measuresList.removeChild(measuresList.lastChild)
+//       }
+//       hero.style = ''
+//     }
+
+//     const handleMediaMatch = () => {
+//       if (!link.classList.contains('current')) return
+//       if (!subContentDetails) return
+
+//       contentWrapper.classList.add('full')
+//       contentWrapper.textContent = ''
+//       contentWrapper.appendChild(contentDetails)
+//       hideAll(subContentDetailsList)
+//       subContentDetails.hidden = false
+//       goBackBtn.hidden = false
+//       mainImage.hidden = false
+
+//       scrollTop()
+//     }
+
+//     const handleMediaNotMatch = () => {
+//       if (!link.classList.contains('current')) return
+//       if (measuresList.lastChild.nodeName === 'IMG') {
+//         measuresList.removeChild(measuresList.lastChild)
+//       }
+//       contentWrapper.classList.remove('full')
+
+//       contentWrapperChildren.forEach((el) => {
+//         contentWrapper.appendChild(el)
+//         contentWrapper.classList.remove('full')
+//       })
+
+//       mainContent.appendChild(contentDetails)
+//       hideAll(subContentDetailsList)
+//       subContentDetails.hidden = false
+//       goBackBtn.hidden = true
+
+//       if (!subContentDetails) return
+//       mainImage.hidden = true
+//       measuresList.appendChild(clonedMainImage)
+//       detailsOpened = true
+//     }
+
+//     const handleMedia = (x) => {
+//       if (x.matches) handleMediaMatch()
+//       else handleMediaNotMatch()
+//     }
+//     let media = window.matchMedia('(max-width: 1024px)')
+//     handleMedia(media)
+//     media.addListener(handleMedia)
+//   })
+// })
+
+
 }
-const showAll = (list) => {
-  list.forEach((subContent) => (subContent.hidden = false))
-}
 
-hideAll(subContentDetailsList)
 
-measuresLinks.forEach((link) => {
-  const sectionDetailsId = link.getAttribute('href')
-  link.addEventListener('click', (e) => {
-    e.preventDefault()
-
-    // hide all content details
-    hideAll(subContentDetailsList)
-
-    // change the style of list items
-    if (link.classList.contains('current')) return
-    measuresLinks.forEach((link) => {
-      link.classList.remove('current')
-    })
-    link.classList.add('current')
-
-    // change image position
-    const goBackBtn = select('.go-back', contentDetails)
-    const subContentDetails = select(sectionDetailsId, contentDetails)
-    const measuresList = select('.content_measures-list')
-    const mainImage = select('.content_measure_image', subContentDetails)
-    mainImage.hidden = false
-    const clonedMainImage = mainImage.cloneNode(true)
-
-    // handle go back button click
-    goBackBtn.onclick = () => {
-      contentWrapperChildren.forEach((el) => {
-        contentWrapper.appendChild(el)
-        contentWrapper.classList.remove('full')
-      })
-      mainContent.appendChild(contentDetails)
-      hideAll(subContentDetailsList)
-      goBackBtn.hidden = true
-      link.classList.remove('current')
-      if (measuresList.lastChild.nodeName === 'IMG') {
-        measuresList.removeChild(measuresList.lastChild)
-      }
-      hero.style = ''
-    }
-
-    const handleMediaMatch = () => {
-      if (!link.classList.contains('current')) return
-      if (!subContentDetails) return
-
-      contentWrapper.classList.add('full')
-      contentWrapper.textContent = ''
-      contentWrapper.appendChild(contentDetails)
-      hideAll(subContentDetailsList)
-      subContentDetails.hidden = false
-      goBackBtn.hidden = false
-      mainImage.hidden = false
-
-      scrollTop()
-    }
-
-    const handleMediaNotMatch = () => {
-      if (!link.classList.contains('current')) return
-      if (measuresList.lastChild.nodeName === 'IMG') {
-        measuresList.removeChild(measuresList.lastChild)
-      }
-      contentWrapper.classList.remove('full')
-
-      contentWrapperChildren.forEach((el) => {
-        contentWrapper.appendChild(el)
-        contentWrapper.classList.remove('full')
-      })
-
-      mainContent.appendChild(contentDetails)
-      hideAll(subContentDetailsList)
-      subContentDetails.hidden = false
-      goBackBtn.hidden = true
-
-      if (!subContentDetails) return
-      mainImage.hidden = true
-      measuresList.appendChild(clonedMainImage)
-      detailsOpened = true
-    }
-
-    const handleMedia = (x) => {
-      if (x.matches) handleMediaMatch()
-      else handleMediaNotMatch()
-    }
-    let media = window.matchMedia('(max-width: 1024px)')
-    handleMedia(media)
-    media.addListener(handleMedia)
-  })
-})
 
 
 /***************
@@ -116,7 +135,7 @@ table section
 ***************/
 const togglerOptions = selectAll('.toggler_option')
 const optionsFilter = select('.options-filter')
-let currentTable = '1'
+let currentTable = 't-e'
 
 togglerOptions.forEach((option) => {
   if (option.checked && option.getAttribute('id') === 'simple') {
@@ -126,7 +145,7 @@ togglerOptions.forEach((option) => {
   option.addEventListener('click', (e) => {
     if (e.target.getAttribute('id') === 'simple') {
       optionsFilter.hidden = true
-      renderTableData('1', true)
+      renderTableData('t-e', true)
     } else {
       optionsFilter.hidden = false
       renderTableData(currentTable)
@@ -134,8 +153,12 @@ togglerOptions.forEach((option) => {
   })
 })
 
+
+
 /* table */
 const table = select('table.species-table')
+const tableBody = select('tbody', table)
+const tableHead = select('thead', table)
 const months = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D']
 
 // render the table top header
@@ -153,7 +176,7 @@ function renderTableHeader() {
   tableTop.appendChild(Kleur)
   tableTop.appendChild(Bloeiperiode)
 
-  table.appendChild(tableTop)
+  tableHead.appendChild(tableTop)
 
 
   // table monthes
@@ -180,21 +203,21 @@ function renderTableHeader() {
   tableMonths.appendChild(emptyCol)
   tableMonths.appendChild(monthsCol)
 
-  table.appendChild(tableMonths)
+  tableHead.appendChild(tableMonths)
 }
 renderTableHeader()
 
 // render table function based on param
-function renderTableData(param, changeCurrent) {
-  const pre = select(`.table-data[data-table="${param}"]`)
+function renderTableData(code, changeCurrent) {
+  const pre = select(`.table-data[data-table-code="${code}"]`)
   const tableArray = JSON.parse(pre.textContent)
 
   if(!changeCurrent) {
-    currentTable = param
+    currentTable = code
   }
 
   // remove old table content
-  table.textContent = ''
+  tableBody.textContent = ''
 
   tableArray.forEach(obj => {
     const specieRow = document.createElement('tr')
@@ -239,28 +262,48 @@ function renderTableData(param, changeCurrent) {
     specieRow.appendChild(colorCol)
     specieRow.appendChild(monthsCol)
 
-    table.appendChild(specieRow)
+    tableBody.appendChild(specieRow)
   })
 }
-renderTableData('1')
+renderTableData('t-e')
 
 /* dropdown */
+const dropdowns = selectAll('.dropdown')
 const dropdownsButtons = selectAll('.dropdown_button')
 const dropdownItems = selectAll('.dropdown_item')
+let dropdown_1_key = 'a'
+let dropdown_2_key = 'm'
 
+// open the dropdown
 dropdownsButtons.forEach((button) => {
   const dropdown = button.closest('.dropdown')
-  button.onclick = () => {
+  button.onclick = (e) => {
+    e.stopPropagation()
+    dropdowns.forEach(dropdown => dropdown.classList.remove('opened'))
     toggleClass('opened', dropdown)
   }
 })
 
-dropdownItems.forEach((item) => {
-  const dropdown = item.closest('.dropdown')
-  item.onclick = () => {
+window.onclick = () => {
+  dropdowns.forEach(dropdown => dropdown.classList.remove('opened'))
+}
+
+
+dropdownItems.forEach(item => {
+  item.onclick = e => {
+    const dropdown = item.closest('.dropdown')
+
+    if(dropdowns[0] === dropdown) {
+      dropdown_1_key = item.getAttribute('data-key')
+
+    } else {
+      dropdown_2_key = item.getAttribute('data-key')
+
+    }
+
     select('.dropdown_picked-option', dropdown).textContent = item.textContent
     toggleClass('opened', dropdown)
 
-    renderTableData(item.getAttribute('data-table'))
+    renderTableData(`t-${dropdown_1_key}${dropdown_2_key}`)
   }
 })

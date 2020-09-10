@@ -29,6 +29,14 @@ const scrollTop = (withAnimation) => {
   })
 }
 
+
+checkPostcode = (value) => {
+  const regExp = /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i
+  if (regExp.test(value)) return true
+  else return false
+}
+
+
 window.onload = () => {
   select('.loader').classList.add('hidden')
 }

@@ -43,9 +43,14 @@ class Form {
 
     for(let i = 0; i <= 2; i++) {
 
-      // hide fields based on previuos fiedl status
-      if (i !== 0 && !this.getField(i - 1).value) {
-        this.getField(i).field.classList.add('hidden')
+      // hide second field based on postcode fiedl status
+      if (i === 1 && !this.checkPostcode(this.getField(0).value)) {
+        this.getField(1).field.classList.add('hidden')
+      }
+
+      // hide last field based on previous fiedl status
+      if(i === 2 && !this.getField(1).value) {
+        this.getField(2).field.classList.add('hidden')
       }
 
       // handle local storage params
@@ -67,13 +72,16 @@ class Form {
         const value = e.target.value
         let canNext = false
 
-        if(e.target.id === 'postcode') {
+        if(this.getField(i).name === 'postcode') {
           if(this.checkPostcode(e.target.value)) {
             this.getField(i).field.classList.remove('error')
           }
           canNext = value.length >= 4
 
-        } else {
+        } else if (this.getField(i).name === 'situatie') [
+          canNext = !!value && this.isReadyToSumbit()
+        ]
+        else {
           canNext = !!value
         }
 
@@ -94,14 +102,14 @@ class Form {
           } else {
             this.getField(i).field.classList.add('passed')
             this.getField(i).pickedValueSpan.textContent = fieldValue.toUpperCase()
+
+            this.getField(i + 1).field.classList.remove('hidden')
           }
 
         } else {
           this.getField(i).field.classList.add('passed')
           this.getField(i).pickedValueSpan.textContent = fieldValue
-        }
 
-        if (i !== 2) {
           this.getField(i + 1).field.classList.remove('hidden')
         }
 

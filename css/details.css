@@ -218,8 +218,13 @@
   color: var(--main-color);
   font-size: 1.8rem;
   padding: 1rem;
-  padding-left: 7.2rem;
+  padding-left: 11.5rem;
   cursor: pointer;
+}
+
+.dropdown:nth-child(2) .dropdown_item,
+.dropdown:nth-child(2) .dropdown_picked-option {
+  padding-left: 8rem;
 }
 
 .dropdown_item:hover {
@@ -292,6 +297,7 @@ th.right {text-align: right;}
   height: 2rem;
   width: 2rem;
   border: 1px solid var(--black);
+  margin-left: -1px;
 }
 
 .species-table td .month-box.letter {

@@ -171,43 +171,43 @@
           <ul class="content_measures-list">
             <li class="content_measure-item">
               <span class="color-box" data-color="green"></span>
-              <a href="#measure_1" class="content_measure_link"
+              <a href='javascript:getMeasureContent(fgr, infopagina); return false' class="content_measure_link"
                 >Inzaaien van een bloemenrand</a
               >
             </li>
             <li class="content_measure-item">
               <span class="color-box" data-color="green"></span>
-              <a href="#measure_2" class="content_measure_link"
+              <a href='javascript:getMeasureContent(fgr, infopagina); return false' class="content_measure_link"
                 >Inzaaien van een bloemenveld</a
               >
             </li>
             <li class="content_measure-item">
               <span class="color-box" data-color="brown"></span>
-              <a href="#measure_3" class="content_measure_link"
+              <a href='javascript:getMeasureContent(fgr, infopagina); return false' class="content_measure_link"
                 >Gevarieerde heg of struweelhaag</a
               >
             </li>
             <li class="content_measure-item">
               <span class="color-box" data-color="brown"></span>
-              <a href="#measure_4" class="content_measure_link"
+              <a href='javascript:getMeasureContent(fgr, infopagina); return false' class="content_measure_link"
                 >Gevarieerde bomenrij of houtwal</a
               >
             </li>
             <li class="content_measure-item">
               <span class="color-box" data-color="blue"></span>
-              <a href="#measure_5" class="content_measure_link"
+              <a href='javascript:getMeasureContent(fgr, infopagina); return false' class="content_measure_link"
                 >Bijvriendelijke slootkant</a
               >
             </li>
             <li class="content_measure-item">
               <span class="color-box" data-color="blue"></span>
-              <a href="#measure_6" class="content_measure_link"
+              <a href='javascript:getMeasureContent(fgr, infopagina); return false' class="content_measure_link"
                 >Bijvriendelijke oeverzone (vijver of poel)</a
               >
             </li>
             <li class="content_measure-item">
               <span class="color-box" data-color="blue"></span>
-              <a href="#measure_7" class="content_measure_link"
+              <a href='javascript:getMeasureContent(fgr, infopagina); return false' class="content_measure_link"
                 >Bijvriendelijke waterbuer of WADI</a
               >
             </li>
@@ -224,14 +224,14 @@
               </label>
             </div>
 
-            <div class="content_measure_details" id="measure_1">
+            <div class="content_measure_details" id="measure_content" hidden>
               <div class="content_measure_head">
                 <h2 class="content_measure_title">
                   Inzaaien van een bloemenrand
                 </h2>
                 <div class="content_measure_print">
                   <a href="javascript:window.print()"
-                    >Afdrukken <img src="./assets/print-icon.svg" alt=""
+                    >Bewaar als pdf <img src="./assets/pdf-icon.svg" alt=""
                   /></a>
                 </div>
               </div>
@@ -338,7 +338,7 @@
 
                   <div class="options-filter">
                     <div class="dropdown">
-                      <label>Bloei :</label>
+                      <label>Levensduur :</label>
                       <div class="dropdown_button">
                         <span class="dropdown_picked-option">Alle</span>
                         <img src="./assets/dropdown-arrow.svg" alt="dropdown" />
@@ -346,13 +346,13 @@
 
                       <div class="dropdown_menu-box">
                         <ul class="dropdown_menu">
-                          <li class="dropdown_item" data-table='1'>
+                          <li class="dropdown_item" data-key='a'>
                             Alle
                           </li>
-                          <li class="dropdown_item" data-table='2'>
+                          <li class="dropdown_item" data-key='e'>
                             Eenjarig
                           </li>
-                          <li class="dropdown_item" data-table='3'>
+                          <li class="dropdown_item" data-key='m'>
                             Meerjarig
                           </li>
                         </ul>
@@ -360,7 +360,7 @@
                     </div>
 
                     <div class="dropdown">
-                      <label>Grond :</label>
+                      <label>Bodem :</label>
                       <div class="dropdown_button">
                         <span class="dropdown_picked-option"
                           >Matig voedselarm</span
@@ -370,13 +370,13 @@
 
                       <div class="dropdown_menu-box">
                         <ul class="dropdown_menu">
-                          <li class="dropdown_item" data-table='1'>
+                          <li class="dropdown_item" data-key='m'>
                             Matig voedselarm
                           </li>
-                          <li class="dropdown_item"  data-table='2'>
+                          <li class="dropdown_item"  data-key='v'>
                             Voedselarm
                           </li>
-                          <li class="dropdown_item"  data-table='3'>
+                          <li class="dropdown_item" data-key='z'>
                             Zeer voedselrijk
                           </li>
                         </ul>
@@ -385,7 +385,7 @@
                   </div>
 
                   <!-- table 1 -->
-                  <pre class="table-data" style="display: none;" data-table="1" hidden>
+                  <pre class="table-data" style="display: none;" data-table-code="t-e" hidden>
                     [{
                       "specie": "Nieskruid (Helleborus)",
                       "link": "#",
@@ -408,7 +408,7 @@
                   </pre>
 
                   <!-- table 2 -->
-                  <pre class="table-data" style="display: none;" data-table="2" hidden>
+                  <pre class="table-data" style="display: none;" data-table-code="t-am" hidden>
                     [
                     {
                       "specie": "Dovenetel (Lamium spp.)",
@@ -432,7 +432,7 @@
                   </pre>
 
                   <!-- table 3 -->
-                  <pre class="table-data" style="display: none;" data-table="3" hidden>
+                  <pre class="table-data" style="display: none;" data-table-code="t-av" hidden>
                     [
                     {
                       "specie": "Anemoon (Anemone)",
@@ -455,7 +455,181 @@
                     ]
                   </pre>
 
+
+                  <!-- table 4 -->
+                  <pre class="table-data" style="display: none;" data-table-code="t-az" hidden>
+                    [
+                    {
+                      "specie": "Somthing 1 (Anemone)",
+                      "link": "#",
+                      "color": "rgb(255, 241, 163)",
+                      "months": [3, 4, 5, 6]
+                    },
+                    {
+                      "specie": "Dovenetel (Lamium spp.)",
+                      "link": "#",
+                      "color": "rgb(211, 163, 255)",
+                      "months": [9, 10, 11, 12]
+                    },
+                    {
+                      "specie": "Nieskruid (Helleborus)",
+                      "link": "#",
+                      "color": "rgb(165, 236, 213)",
+                      "months": [1, 2, 3]
+                    }
+                    ]
+                  </pre>
+
+                  <!-- table 5 -->
+                  <pre class="table-data" style="display: none;" data-table-code="t-em" hidden>
+                    [
+                    {
+                      "specie": "Somthing 2 (Anemone)",
+                      "link": "#",
+                      "color": "rgb(255, 241, 163)",
+                      "months": [3, 4, 5, 6]
+                    },
+                    {
+                      "specie": "Dovenetel (Lamium spp.)",
+                      "link": "#",
+                      "color": "rgb(211, 163, 255)",
+                      "months": [9, 10, 11, 12]
+                    },
+                    {
+                      "specie": "Nieskruid (Helleborus)",
+                      "link": "#",
+                      "color": "rgb(165, 236, 213)",
+                      "months": [1, 2, 3]
+                    }
+                    ]
+                  </pre>
+
+                  <!-- table 6 -->
+                  <pre class="table-data" style="display: none;" data-table-code="t-ev" hidden>
+                    [
+                    {
+                      "specie": "Somthing 3 (Anemone)",
+                      "link": "#",
+                      "color": "rgb(255, 241, 163)",
+                      "months": [3, 4, 5, 6]
+                    },
+                    {
+                      "specie": "Dovenetel (Lamium spp.)",
+                      "link": "#",
+                      "color": "rgb(211, 163, 255)",
+                      "months": [9, 10, 11, 12]
+                    },
+                    {
+                      "specie": "Nieskruid (Helleborus)",
+                      "link": "#",
+                      "color": "rgb(165, 236, 213)",
+                      "months": [1, 2, 3]
+                    }
+                    ]
+                  </pre>
+
+                  <!-- table 7 -->
+                  <pre class="table-data" style="display: none;" data-table-code="t-ez" hidden>
+                    [
+                    {
+                      "specie": "Somthing 4 (Anemone)",
+                      "link": "#",
+                      "color": "rgb(255, 241, 163)",
+                      "months": [3, 4, 5, 6]
+                    },
+                    {
+                      "specie": "Dovenetel (Lamium spp.)",
+                      "link": "#",
+                      "color": "rgb(211, 163, 255)",
+                      "months": [9, 10, 11, 12]
+                    },
+                    {
+                      "specie": "Nieskruid (Helleborus)",
+                      "link": "#",
+                      "color": "rgb(165, 236, 213)",
+                      "months": [1, 2, 3]
+                    }
+                    ]
+                  </pre>
+
+                  <!-- table 8 -->
+                  <pre class="table-data" style="display: none;" data-table-code="t-mm" hidden>
+                    [
+                    {
+                      "specie": "Somthing 5 (Anemone)",
+                      "link": "#",
+                      "color": "rgb(255, 241, 163)",
+                      "months": [3, 4, 5, 6]
+                    },
+                    {
+                      "specie": "Dovenetel (Lamium spp.)",
+                      "link": "#",
+                      "color": "rgb(211, 163, 255)",
+                      "months": [9, 10, 11, 12]
+                    },
+                    {
+                      "specie": "Nieskruid (Helleborus)",
+                      "link": "#",
+                      "color": "rgb(165, 236, 213)",
+                      "months": [1, 2, 3]
+                    }
+                    ]
+                  </pre>
+
+                  <!-- table 9 -->
+                  <pre class="table-data" style="display: none;" data-table-code="t-mv" hidden>
+                    [
+                    {
+                      "specie": "Somthing 6 (Anemone)",
+                      "link": "#",
+                      "color": "rgb(255, 241, 163)",
+                      "months": [3, 4, 5, 6]
+                    },
+                    {
+                      "specie": "Dovenetel (Lamium spp.)",
+                      "link": "#",
+                      "color": "rgb(211, 163, 255)",
+                      "months": [9, 10, 11, 12]
+                    },
+                    {
+                      "specie": "Nieskruid (Helleborus)",
+                      "link": "#",
+                      "color": "rgb(165, 236, 213)",
+                      "months": [1, 2, 3]
+                    }
+                    ]
+                  </pre>
+
+                  <!-- table 10 -->
+                  <pre class="table-data" style="display: none;" data-table-code="t-mz" hidden>
+                    [
+                    {
+                      "specie": "Somthing 7 (Anemone)",
+                      "link": "#",
+                      "color": "rgb(255, 241, 163)",
+                      "months": [3, 4, 5, 6]
+                    },
+                    {
+                      "specie": "Dovenetel (Lamium spp.)",
+                      "link": "#",
+                      "color": "rgb(211, 163, 255)",
+                      "months": [9, 10, 11, 12]
+                    },
+                    {
+                      "specie": "Nieskruid (Helleborus)",
+                      "link": "#",
+                      "color": "rgb(165, 236, 213)",
+                      "months": [1, 2, 3]
+                    }
+                    ]
+                  </pre>
+
                   <table class="species-table">
+                    <thead>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
                   </table>
 
                 </div>
@@ -574,50 +748,6 @@
                     Blijvend bijvriendelijk beheer is essentieel om de waarde
                     voor de toekomst te behouden. Een gericht a
                     <a href="#">beheer-advies</a> is ook beschikbaar.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="content_measure_details" id="measure_2">
-              <h2 class="content_measure_title">second section</h2>
-
-              <img
-                src="./assets/p1-blauwe-metselbij.jpg"
-                alt="measure"
-                class="content_measure_image"
-              />
-
-              <div>
-                <input
-                  type="checkbox"
-                  id="section_6"
-                  class="section_title_input"
-                />
-                <div class="sm-box section_dropdown">
-                  <img src="./assets/arrow.svg" alt="arrow" />
-                </div>
-                <label for="section_6" class="section_title">
-                  Introductie
-                </label>
-                <div class="section_content">
-                  <p>
-                    Een bloemrijke vegetatie kan bij een juiste aanleg en goed
-                    beheer een belangrijke voedselbron vormen voor wilde
-                    bestuivers. Inheemse bloemenmengsels met gebiedseigen
-                    soorten sluiten het beste aan bij de eisen van de lokaal
-                    voorkomende wilde bestuivers. De bodem is een belangrijke
-                    factor in de slagingskans van de aanleg periode. Deze kan
-                    beter niet te voedselrijk zijn en moet goed voorbereid
-                    worden (zaaiklaar zijn).
-                  </p>
-                  <p>
-                    Bloemrijke vegetaties zijn er in verschillende vormen en met
-                    verschillende doelen. Zo kan deze ook een rol spelen bij de
-                    beheersing van plaagdieren in gewassenteelt. Bloemstroken
-                    worden vaak langs akkers, wegbermen of in parken of
-                    woonwijken aangelegd. Een bloemenveld is een breder perceel
-                    zoals in half-natuurlij
                   </p>
                 </div>
               </div>

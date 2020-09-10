@@ -21,43 +21,50 @@ if (entries.length) {
 
 const edit_btn = select('.content_edit-btn')
 
-edit_btn.addEventListener('click', (e) => {
-  e.preventDefault()
-  localStorage.setItem('search_params', JSON.stringify(paramsObj))
+localStorage.setItem('search_params', JSON.stringify(paramsObj))
 
-  window.location.href = edit_btn.getAttribute('href')
-})
+// edit_btn.addEventListener('click', (e) => {
+//   e.preventDefault()
+//   window.location.href = edit_btn.getAttribute('href')
+// })
+
+
 
 /****************
 Draw the Pie chart
 ****************/
 const chartWrapper = select('.chart_wrapper')
 const chartCanvas = select('#chart_canvas')
-chartCanvas.width = 125
-chartCanvas.height = 125
-const colors = {
-  green: '#29af58',
-  brown: '#b27036',
-  blue: '#29abe2',
-  yellow: '#ffb831',
+
+if(chartCanvas) {
+  chartCanvas.width = 125
+  chartCanvas.height = 125
+  const colors = {
+    green: '#29af58',
+    brown: '#b27036',
+    blue: '#29abe2',
+    yellow: '#ffb831',
+  }
+  const chartData = []
+  const chart_legend_elements = selectAll('.chart_legend_element')
+
+  chart_legend_elements.forEach((element) => {
+    const categ = {}
+    categ.name = select('.chart_legend_element-name', element)
+      .textContent.trim()
+    categ.value = +select('.chart_legend_element-value', element)
+      .getAttribute('data-value')
+    categ.color =
+      colors[select('.color-box', element).getAttribute('data-color')]
+    chartData.push(categ)
+  })
+
+
+
+  const doughnutChart = new Piechart({
+    canvas: chartCanvas,
+    data: chartData,
+    doughnutHoleSize: 0.58,
+  })
+  doughnutChart.draw()
 }
-const chartData = []
-const chart_legend_elements = selectAll('.chart_legend_element')
-
-chart_legend_elements.forEach((element) => {
-  const categ = {}
-  categ.name = select('.chart_legend_element-name', element)
-    .textContent.trim()
-  categ.value = +select('.chart_legend_element-value', element)
-    .getAttribute('data-value')
-  categ.color =
-    colors[select('.color-box', element).getAttribute('data-color')]
-  chartData.push(categ)
-})
-
-const doughnutChart = new Piechart({
-  canvas: chartCanvas,
-  data: chartData,
-  doughnutHoleSize: 0.58,
-})
-doughnutChart.draw()
