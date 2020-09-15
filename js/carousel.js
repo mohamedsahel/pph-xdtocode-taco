@@ -20,7 +20,7 @@ const Carousel = function ({
 
   this.slideCarousel = (dir, withTransition) => {
 
-    this.slideWidth = this.currentSlide === 0 ? +getStyle(this.container, 'width') + 4.25 : getStyle(this.container, 'width')
+    this.slideWidth = getStyle(this.container, 'width')
     this.slideFrom = dir
     const dirSign = dir === 'left' ? -1 : 1
     this.currentSlide += dirSign

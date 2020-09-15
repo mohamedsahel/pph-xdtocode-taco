@@ -97,11 +97,14 @@
 
 .content_measures-list {
   margin-right: 1.6rem;
+  list-style: none;
 }
 
 .content_measure-item {
   margin-bottom: 1.4rem;
+  margin-left: 0rem;
   font-weight: bold;
+  list-style-type: none;
 }
 
 .color-box {

@@ -49,10 +49,44 @@ img {
   max-height: 100%;
 }
 
-ol,
-ul {
-  list-style: none;
+
+li {
+  margin: 1rem;
 }
+
+ol ol, ul ul {
+  margin-left: 3rem;
+}
+
+ol ol ol, ul ul ul {
+  margin-left: 6rem;
+}
+
+
+
+ul li {
+  list-style-type: square;
+}
+
+ul ul li {
+  list-style-type: circle;
+}
+
+ul ul ul li {
+  list-style-type: disc;
+}
+
+
+ol ol li {
+  list-style-type: lower-latin;
+}
+
+ol ol ol li {
+  list-style-type: lower-roman;
+}
+
+
+
 
 table {
   border-collapse: collapse;
