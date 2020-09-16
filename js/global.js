@@ -29,6 +29,13 @@ const scrollTop = (withAnimation) => {
   })
 }
 
+const scrollBottom = (withAnimation) => {
+  window.scrollTo({
+    top: 10000,
+    behavior: withAnimation && 'smooth'
+  })
+}
+
 
 checkPostcode = (value) => {
   const regExp = /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i

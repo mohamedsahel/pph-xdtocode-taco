@@ -110,6 +110,8 @@
 
       <!-- content section -->
       <section class="content">
+        <div class="content_full-width"></div>
+
         <div class="print-box">
           <h3 class="content_title">Aanleg van voedselaanbod</h3>
           <div class="content_chosen-params">
@@ -249,533 +251,325 @@
               </label>
             </div>
 
-            <div class="content_measure_details" id="measure_content" hidden>
-              <div class="content_measure_head">
-                <h2 class="content_measure_title">
-                  Inzaaien van een bloemenrand
-                </h2>
-                <div class="content_measure_print">
-                  <a href="javascript:window.print()"
-                    >Bewaar als pdf <img src="./assets/pdf-icon.svg" alt=""
-                  /></a>
+
+            <div class="content_measure_details" id="measure_content">
+              <div class='content_measure_head'>
+                <h2 class='content_measure_title'>Beheer bloemenstrook</h2>
+                <div class='content_measure_print'>
+                <a href='javascript:window.print()'>Afdrukken <img src='./assets/print-icon.svg' alt=''/></a>
                 </div>
-              </div>
-
-              <img
-                src="./assets/main-image-of-measure.jpg"
-                alt="measure"
-                class="content_measure_image"
-              />
-
-              <div>
-                <input
-                  type="checkbox"
-                  id="section_1"
-                  class="section_title_input"
-                />
-                <div class="sm-box section_dropdown">
-                  <img src="./assets/arrow.svg" alt="arrow" />
                 </div>
-                <label for="section_1" class="section_title">
-                  Introductie
-                </label>
-                <div class="section_content">
-                  <p>
-                    Een bloemrijke vegetatie kan bij een juiste aanleg en goed
-                    beheer een belangrijke voedselbron vormen voor wilde
-                    bestuivers. Inheemse bloemenmengsels met gebiedseigen
-                    soorten sluiten het beste aan bij de eisen van de lokaal
-                    voorkomende wilde bestuivers. De bodem is een belangrijke
-                    factor in de slagingskans van de aanleg periode. Deze kan
-                    beter niet te voedselrijk zijn en moet goed voorbereid
-                    worden (zaaiklaar zijn).
-                  </p>
-                  <p>
-                    Bloemrijke vegetaties zijn er in verschillende vormen en met
-                    verschillende doelen. Zo kan deze ook een rol spelen bij de
-                    beheersing van plaagdieren in gewassenteelt. Bloemstroken
-                    worden vaak langs akkers, wegbermen of in parken of
-                    woonwijken aangelegd. Een bloemenveld is een breder perceel
-                    zoals in half-natuurlij
-                  </p>
+                <img src='./assets/main-image-of-measure.jpg' alt='maatregel' class='content_measure_image'/>
+                <div>
+                <input type='checkbox' id='section_1' class='section_title_input' />
+                <div class='sm-box section_dropdown'><img src='./assets/arrow.svg' alt='arrow' /></div>
+                <label for='section_1' class='section_title'>Inleiding</label>
+                <div class='section_content'>
+                <p>Algemene omschrijving: wat houdt maatregel in, welke varianten zijn er</p>
                 </div>
-              </div>
-
-              <div>
-                <input
-                  type="checkbox"
-                  id="section_2"
-                  class="section_title_input"
-                />
-                <div class="sm-box section_dropdown">
-                  <img src="./assets/arrow.svg" alt="arrow" />
                 </div>
-                <label for="section_2" class="section_title">
-                  Gewenste vegetatie
-                </label>
-                <div class="section_content">
-                  <p>
-                    Op basis van de planten die van nature in uw regio
-                    voorkomen, en welke daarvan het meest relevant zijn voor de
-                    bestuivers in uw regio, adviseren we om toe te werken naar
-                    een vegetatie met de plantensoorten uit onderstaande lijst.
-                    Onderzoek waar mogelijk eerst of deze soorten nu al
-                    voorkomen op de plek waar u een maatregel wilt gaan nemen.
-                    Zo ja, dan is het beter om deze soorten te bevorderen via
-                    het juiste beheer. Een gericht beheer-advies is ook
-                    beschikbaar.
-                  </p>
+                <div>
+                <input type='checkbox' id='section_2' class='section_title_input' />
+                <div class='sm-box section_dropdown'><img src='./assets/arrow.svg' alt='arrow' /></div>
+                <label for='section_2' class='section_title'>Gewenste vegetatie</label>
+                <div class='section_content'>
+                <p>Op basis van de planten die van nature in uw regio voorkomen, en welke daarvan het meest relevant zijn voor de bestuivers in uw regio, adviseren we om in uw beheersplan toe te werken naar een vegetatie met de plantensoorten uit onderstaande lijst:</p>
                 </div>
-              </div>
-
-              <div>
-                <input
-                  type="checkbox"
-                  id="section_3"
-                  class="section_title_input"
-                />
-                <div class="sm-box section_dropdown">
-                  <img src="./assets/arrow.svg" alt="arrow" />
                 </div>
-                <label for="section_3" class="section_title">
-                  Meest geschikte soorten
-                </label>
-
-                <div class="section_content">
-                  <div class="options-filter-toggler">
-                    <input
-                      type="radio"
-                      name="filter-option"
-                      id="simple"
-                      class="toggler_option"
-                      checked
-                    />
-                    <label for="simple">Eenvoudig</label>
-
-                    <input
-                      type="radio"
-                      name="filter-option"
-                      id="extended"
-                      class="toggler_option"
-                    />
-                    <label for="extended">Uitgebreid</label>
-                  </div>
-
-                  <div class="options-filter">
-                    <div class="dropdown">
-                      <label>Levensduur :</label>
-                      <div class="dropdown_button">
-                        <span class="dropdown_picked-option">Alle</span>
-                        <img src="./assets/dropdown-arrow.svg" alt="dropdown" />
-                      </div>
-
-                      <div class="dropdown_menu-box">
-                        <ul class="dropdown_menu">
-                          <li class="dropdown_item" data-key='a'>
-                            Alle
-                          </li>
-                          <li class="dropdown_item" data-key='e'>
-                            Eenjarig
-                          </li>
-                          <li class="dropdown_item" data-key='m'>
-                            Meerjarig
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div class="dropdown">
-                      <label>Bodem :</label>
-                      <div class="dropdown_button">
-                        <span class="dropdown_picked-option"
-                          >Matig voedselarm</span
-                        >
-                        <img src="./assets/dropdown-arrow.svg" alt="dropdown" />
-                      </div>
-
-                      <div class="dropdown_menu-box">
-                        <ul class="dropdown_menu">
-                          <li class="dropdown_item" data-key='m'>
-                            Matig voedselarm
-                          </li>
-                          <li class="dropdown_item"  data-key='v'>
-                            Voedselarm
-                          </li>
-                          <li class="dropdown_item" data-key='z'>
-                            Zeer voedselrijk
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- table 1 -->
-                  <pre class="table-data" style="display: none;" data-table-code="t-e" hidden>
-                    [{
-                      "specie": "Nieskruid (Helleborus)",
-                      "link": "#",
-                      "color": "rgb(165, 236, 213)",
-                      "months": [1, 2, 3]
-                    },
-                    {
-                      "specie": "Anemoon (Anemone)",
-                      "link": "#",
-                      "color": "rgb(255, 241, 163)",
-                      "months": [3, 4, 5, 6]
-                    },
-                    {
-                      "specie": "Dovenetel (Lamium spp.)",
-                      "link": "#",
-                      "color": "rgb(211, 163, 255)",
-                      "months": [9, 10, 11, 12]
-                    }
-                    ]
-                  </pre>
-
-                  <!-- table 2 -->
-                  <pre class="table-data" style="display: none;" data-table-code="t-am" hidden>
-                    [
-                    {
-                      "specie": "Dovenetel (Lamium spp.)",
-                      "link": "#",
-                      "color": "rgb(211, 163, 255)",
-                      "months": [9, 10, 11, 12]
-                    },
-                    {
-                      "specie": "Nieskruid (Helleborus)",
-                      "link": "#",
-                      "color": "rgb(165, 236, 213)",
-                      "months": [1, 2, 3]
-                    },
-                    {
-                      "specie": "Anemoon (Anemone)",
-                      "link": "#",
-                      "color": "rgb(255, 241, 163)",
-                      "months": [3, 4, 5, 6]
-                    }
-                    ]
-                  </pre>
-
-                  <!-- table 3 -->
-                  <pre class="table-data" style="display: none;" data-table-code="t-av" hidden>
-                    [
-                    {
-                      "specie": "Anemoon (Anemone)",
-                      "link": "#",
-                      "color": "rgb(255, 241, 163)",
-                      "months": [3, 4, 5, 6]
-                    },
-                    {
-                      "specie": "Dovenetel (Lamium spp.)",
-                      "link": "#",
-                      "color": "rgb(211, 163, 255)",
-                      "months": [9, 10, 11, 12]
-                    },
-                    {
-                      "specie": "Nieskruid (Helleborus)",
-                      "link": "#",
-                      "color": "rgb(165, 236, 213)",
-                      "months": [1, 2, 3]
-                    }
-                    ]
-                  </pre>
-
-
-                  <!-- table 4 -->
-                  <pre class="table-data" style="display: none;" data-table-code="t-az" hidden>
-                    [
-                    {
-                      "specie": "Somthing 1 (Anemone)",
-                      "link": "#",
-                      "color": "rgb(255, 241, 163)",
-                      "months": [3, 4, 5, 6]
-                    },
-                    {
-                      "specie": "Dovenetel (Lamium spp.)",
-                      "link": "#",
-                      "color": "rgb(211, 163, 255)",
-                      "months": [9, 10, 11, 12]
-                    },
-                    {
-                      "specie": "Nieskruid (Helleborus)",
-                      "link": "#",
-                      "color": "rgb(165, 236, 213)",
-                      "months": [1, 2, 3]
-                    }
-                    ]
-                  </pre>
-
-                  <!-- table 5 -->
-                  <pre class="table-data" style="display: none;" data-table-code="t-em" hidden>
-                    [
-                    {
-                      "specie": "Somthing 2 (Anemone)",
-                      "link": "#",
-                      "color": "rgb(255, 241, 163)",
-                      "months": [3, 4, 5, 6]
-                    },
-                    {
-                      "specie": "Dovenetel (Lamium spp.)",
-                      "link": "#",
-                      "color": "rgb(211, 163, 255)",
-                      "months": [9, 10, 11, 12]
-                    },
-                    {
-                      "specie": "Nieskruid (Helleborus)",
-                      "link": "#",
-                      "color": "rgb(165, 236, 213)",
-                      "months": [1, 2, 3]
-                    }
-                    ]
-                  </pre>
-
-                  <!-- table 6 -->
-                  <pre class="table-data" style="display: none;" data-table-code="t-ev" hidden>
-                    [
-                    {
-                      "specie": "Somthing 3 (Anemone)",
-                      "link": "#",
-                      "color": "rgb(255, 241, 163)",
-                      "months": [3, 4, 5, 6]
-                    },
-                    {
-                      "specie": "Dovenetel (Lamium spp.)",
-                      "link": "#",
-                      "color": "rgb(211, 163, 255)",
-                      "months": [9, 10, 11, 12]
-                    },
-                    {
-                      "specie": "Nieskruid (Helleborus)",
-                      "link": "#",
-                      "color": "rgb(165, 236, 213)",
-                      "months": [1, 2, 3]
-                    }
-                    ]
-                  </pre>
-
-                  <!-- table 7 -->
-                  <pre class="table-data" style="display: none;" data-table-code="t-ez" hidden>
-                    [
-                    {
-                      "specie": "Somthing 4 (Anemone)",
-                      "link": "#",
-                      "color": "rgb(255, 241, 163)",
-                      "months": [3, 4, 5, 6]
-                    },
-                    {
-                      "specie": "Dovenetel (Lamium spp.)",
-                      "link": "#",
-                      "color": "rgb(211, 163, 255)",
-                      "months": [9, 10, 11, 12]
-                    },
-                    {
-                      "specie": "Nieskruid (Helleborus)",
-                      "link": "#",
-                      "color": "rgb(165, 236, 213)",
-                      "months": [1, 2, 3]
-                    }
-                    ]
-                  </pre>
-
-                  <!-- table 8 -->
-                  <pre class="table-data" style="display: none;" data-table-code="t-mm" hidden>
-                    [
-                    {
-                      "specie": "Somthing 5 (Anemone)",
-                      "link": "#",
-                      "color": "rgb(255, 241, 163)",
-                      "months": [3, 4, 5, 6]
-                    },
-                    {
-                      "specie": "Dovenetel (Lamium spp.)",
-                      "link": "#",
-                      "color": "rgb(211, 163, 255)",
-                      "months": [9, 10, 11, 12]
-                    },
-                    {
-                      "specie": "Nieskruid (Helleborus)",
-                      "link": "#",
-                      "color": "rgb(165, 236, 213)",
-                      "months": [1, 2, 3]
-                    }
-                    ]
-                  </pre>
-
-                  <!-- table 9 -->
-                  <pre class="table-data" style="display: none;" data-table-code="t-mv" hidden>
-                    [
-                    {
-                      "specie": "Somthing 6 (Anemone)",
-                      "link": "#",
-                      "color": "rgb(255, 241, 163)",
-                      "months": [3, 4, 5, 6]
-                    },
-                    {
-                      "specie": "Dovenetel (Lamium spp.)",
-                      "link": "#",
-                      "color": "rgb(211, 163, 255)",
-                      "months": [9, 10, 11, 12]
-                    },
-                    {
-                      "specie": "Nieskruid (Helleborus)",
-                      "link": "#",
-                      "color": "rgb(165, 236, 213)",
-                      "months": [1, 2, 3]
-                    }
-                    ]
-                  </pre>
-
-                  <!-- table 10 -->
-                  <pre class="table-data" style="display: none;" data-table-code="t-mz" hidden>
-                    [
-                    {
-                      "specie": "Somthing 7 (Anemone)",
-                      "link": "#",
-                      "color": "rgb(255, 241, 163)",
-                      "months": [3, 4, 5, 6]
-                    },
-                    {
-                      "specie": "Dovenetel (Lamium spp.)",
-                      "link": "#",
-                      "color": "rgb(211, 163, 255)",
-                      "months": [9, 10, 11, 12]
-                    },
-                    {
-                      "specie": "Nieskruid (Helleborus)",
-                      "link": "#",
-                      "color": "rgb(165, 236, 213)",
-                      "months": [1, 2, 3]
-                    }
-                    ]
-                  </pre>
-
-                  <table class="species-table">
-                    <thead>
-                    </thead>
-
-                    <tbody>
-                    </tbody>
-                  </table>
-
+                <div>
+                <input type='checkbox' id='section_3' class='section_title_input' />
+                <div class='sm-box section_dropdown'><img src='./assets/arrow.svg' alt='arrow' /></div>
+                <label for='section_3' class='section_title'>Meest geschikte soorten</label>
+                <div class='section_content'>
+                <div class='options-filter-toggler'>
+                <input type='radio' name='filter-option' id='simple' class='toggler_option' checked/>
+                <label for='simple'>Eenvoudig</label>
+                <input type='radio' name='filter-option' id='extended' class='toggler_option' />
+                <label for='extended'>Uitgebreid</label>
                 </div>
-              </div>
+                <div class='options-filter'>
+                <div class='dropdown'>
+                <label>Levensduur :</label>
+                <div class='dropdown_button'>
+                <span class='dropdown_picked-option'>Alle</span>
+                <img src='./assets/dropdown-arrow.svg' alt='dropdown' />
+                </div>
+                <div class='dropdown_menu-box'>
+                <ul class='dropdown_menu'>
+                <li class='dropdown_item' data-key='a'>Alle</li>
+                <li class='dropdown_item' data-key='e'>Eenjarig</li>
+                <li class='dropdown_item' data-key='m'>Meerjarig</li>
+                </ul>
+                </div>
+                </div>
+                <div class='dropdown'>
+                <label>Bodem :</label>
+                <div class='dropdown_button'>
+                <span class='dropdown_picked-option'>Matig voedselarm</span>
+                <img src='./assets/dropdown-arrow.svg' alt='dropdown' />
+                </div>
+                <div class='dropdown_menu-box'>
+                <ul class='dropdown_menu'>
+                <li class='dropdown_item' data-key='m'>Matig voedselarm</li>
+                <li class='dropdown_item' data-key='v'>Voedselarm</li>
+                <li class='dropdown_item' data-key='z'>Zeer voedselrijk</li>
+                </ul>
+                </div>
+                </div>
+                </div>
+                <pre class='table-data' style='display: none;' data-table-code='t-e' hidden>
+                [{"specie": "Echte tijm (Thymus vulgaris)", "link": "https://www.verspreidingsatlas.nl/5152", "color": "rgb(192, 192, 192)", "months": [5,6]}
+                ,{"specie": "Spaanse aak (Acer campestre)", "link": "https://www.verspreidingsatlas.nl/0001", "color": "rgb(192, 192, 192)", "months": [5,6]}
+                ,{"specie": "Aardaker (Lathyrus tuberosus)", "link": "https://www.verspreidingsatlas.nl/0717", "color": "rgb(255, 0, 0)", "months": [6,7,8]}
+                ,{"specie": "Scherpe boterbloem (Ranunculus acris)", "link": "https://www.verspreidingsatlas.nl/1040", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8,9,10,11,12]}
+                ,{"specie": "Klimop (Hedera helix)", "link": "https://www.verspreidingsatlas.nl/0598", "color": "rgb(192, 192, 192)", "months": [9,10,11,12]}
+                ,{"specie": "Knoopkruid (Centaurea jacea)", "link": "https://www.verspreidingsatlas.nl/1766", "color": "rgb(192, 192, 192)", "months": [6,7,8,9,10,11,12]}
+                ,{"specie": "Gewone esdoorn (Acer pseudoplatanus)", "link": "https://www.verspreidingsatlas.nl/0002", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Stekelbrem (Genista anglica)", "link": "https://www.verspreidingsatlas.nl/0558", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8]}
+                ,{"specie": "Akkerleeuwebek (Misopates orontium)", "link": "https://www.verspreidingsatlas.nl/0072", "color": "rgb(192, 192, 192)", "months": [6,7,8,9,10]}
+                ,{"specie": "Knoopkruid (Centaurea jacea)", "link": "https://www.verspreidingsatlas.nl/1766", "color": "rgb(192, 192, 192)", "months": [6,7,8,9,10,11,12]}
+                ,{"specie": "Heggedoornzaad (Torilis japonica)", "link": "https://www.verspreidingsatlas.nl/1289", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Gewone smeerwortel (Symphytum officinale)", "link": "https://www.verspreidingsatlas.nl/1259", "color": "rgb(192, 192, 192)", "months": [5,6,7,8]}
+                ,{"specie": "Groot hoefblad (Petasites hybridus)", "link": "https://www.verspreidingsatlas.nl/0926", "color": "rgb(192, 192, 192)", "months": [3,4]}
+                ,{"specie": "Grote kattestaart (Lythrum salicaria)", "link": "https://www.verspreidingsatlas.nl/0785", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Knopig helmkruid (Scrophularia nodosa)", "link": "https://www.verspreidingsatlas.nl/1170", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Daslook (Allium ursinum)", "link": "https://www.verspreidingsatlas.nl/0034", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Prachtklokje (Campanula persicifolia)", "link": "https://www.verspreidingsatlas.nl/0194", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Kruiptijm (Thymus praecox)", "link": "https://www.verspreidingsatlas.nl/1420", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Moeraswederik (Lysimachia thyrsiflora)", "link": "https://www.verspreidingsatlas.nl/0783", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Knopherik (Raphanus raphanistrum)", "link": "https://www.verspreidingsatlas.nl/1061", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ]
+                </pre>
+                <pre class='table-data' style='display: none;' data-table-code='t-am' hidden>
+                [{"specie": "Grauwe en Rossige wilg (Salix cinerea)", "link": "https://www.verspreidingsatlas.nl/1119", "color": "rgb(192, 192, 192)", "months": [3,4]}
+                ,{"specie": "Hemelsleutel (Sedum telephium)", "link": "https://www.verspreidingsatlas.nl/2358", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Korenbloem (Centaurea cyanus)", "link": "https://www.verspreidingsatlas.nl/0279", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Struikhei (Calluna vulgaris)", "link": "https://www.verspreidingsatlas.nl/0186", "color": "rgb(192, 192, 192)", "months": [7,8,9,10,11,12]}
+                ,{"specie": "Heggedoornzaad (Torilis japonica)", "link": "https://www.verspreidingsatlas.nl/1289", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Sint-Janskruid (Hypericum perforatum)", "link": "https://www.verspreidingsatlas.nl/0649", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Tripmadam (Sedum reflexum)", "link": "https://www.verspreidingsatlas.nl/1180", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Echt bitterkruid (Picris hieracioides)", "link": "https://www.verspreidingsatlas.nl/0938", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Overblijvende ossetong (Pentaglottis sempervirens)", "link": "https://www.verspreidingsatlas.nl/1871", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8,9,10,11,12]}
+                ,{"specie": "Moerasrolklaver (Lotus pedunculatus)", "link": "https://www.verspreidingsatlas.nl/0763", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Vogelkers (Prunus padus)", "link": "https://www.verspreidingsatlas.nl/1019", "color": "rgb(192, 192, 192)", "months": [4,5]}
+                ,{"specie": "Moerasrolklaver (Lotus pedunculatus)", "link": "https://www.verspreidingsatlas.nl/0763", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Wilgeroosje (Chamerion angustifolium)", "link": "https://www.verspreidingsatlas.nl/0450", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Muurpeper (Sedum acre)", "link": "https://www.verspreidingsatlas.nl/1175", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Boerenwormkruid (Tanacetum vulgare)", "link": "https://www.verspreidingsatlas.nl/1260", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Gewone smeerwortel (Symphytum officinale)", "link": "https://www.verspreidingsatlas.nl/1259", "color": "rgb(192, 192, 192)", "months": [5,6,7,8]}
+                ,{"specie": "Grote klaproos (Papaver rhoeas)", "link": "https://www.verspreidingsatlas.nl/0916", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Grote tijm (Thymus pulegioides)", "link": "https://www.verspreidingsatlas.nl/1283", "color": "rgb(255, 0, 0)", "months": [6,7,8]}
+                ,{"specie": "Moeraswederik (Lysimachia thyrsiflora)", "link": "https://www.verspreidingsatlas.nl/0783", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Wilgeroosje (Chamerion angustifolium)", "link": "https://www.verspreidingsatlas.nl/0450", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ]
+                </pre>
+                <pre class='table-data' style='display: none;' data-table-code='t-av' hidden>
+                [{"specie": "Boswilg (Salix caprea)", "link": "https://www.verspreidingsatlas.nl/1118", "color": "rgb(192, 192, 192)", "months": [3,4]}
+                ,{"specie": "Gipskruid (Gypsophila muralis)", "link": "https://www.verspreidingsatlas.nl/0594", "color": "rgb(192, 192, 192)", "months": [7,8,9,10]}
+                ,{"specie": "Gewone pastinaak (Pastinaca sativa)", "link": "https://www.verspreidingsatlas.nl/0922", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Grote tijm (Thymus pulegioides)", "link": "https://www.verspreidingsatlas.nl/1283", "color": "rgb(255, 0, 0)", "months": [6,7,8]}
+                ,{"specie": "Look-zonder-look (Alliaria petiolata)", "link": "https://www.verspreidingsatlas.nl/0029", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Gewone esdoorn (Acer pseudoplatanus)", "link": "https://www.verspreidingsatlas.nl/0002", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Knopherik (Raphanus raphanistrum)", "link": "https://www.verspreidingsatlas.nl/1061", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Kleine ratelaar (Rhinanthus minor)", "link": "https://www.verspreidingsatlas.nl/1067", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9]}
+                ,{"specie": "Grauwe en Rossige wilg (Salix cinerea)", "link": "https://www.verspreidingsatlas.nl/1119", "color": "rgb(192, 192, 192)", "months": [3,4]}
+                ,{"specie": "Daslook (Allium ursinum)", "link": "https://www.verspreidingsatlas.nl/0034", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Smalle wikke s.l. (Vicia sativa)", "link": "https://www.verspreidingsatlas.nl/1960", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Zacht vetkruid (Sedum sexangulare)", "link": "https://www.verspreidingsatlas.nl/1181", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Zwarte mosterd (Brassica nigra)", "link": "https://www.verspreidingsatlas.nl/0152", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Kleine ratelaar (Rhinanthus minor)", "link": "https://www.verspreidingsatlas.nl/1067", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9]}
+                ,{"specie": "Heggerank (Bryonia dioica)", "link": "https://www.verspreidingsatlas.nl/0167", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Katwilg (Salix viminalis)", "link": "https://www.verspreidingsatlas.nl/1126", "color": "rgb(192, 192, 192)", "months": [3,4]}
+                ,{"specie": "Grote klaproos (Papaver rhoeas)", "link": "https://www.verspreidingsatlas.nl/0916", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Bieslook (Allium schoenoprasum)", "link": "https://www.verspreidingsatlas.nl/0032", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Veldereprijs (Veronica arvensis)", "link": "https://www.verspreidingsatlas.nl/1347", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8,9,10,11,12]}
+                ,{"specie": "Witte klaver (Trifolium repens)", "link": "https://www.verspreidingsatlas.nl/1306", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9,10,11,12]}
+                ]
+                </pre>
+                <pre class='table-data' style='display: none;' data-table-code='t-az' hidden>
+                [{"specie": "Blauwe bosbes (Vaccinium myrtillus)", "link": "https://www.verspreidingsatlas.nl/1329", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Aalbes (Ribes rubrum)", "link": "https://www.verspreidingsatlas.nl/1071", "color": "rgb(192, 192, 192)", "months": [4,5]}
+                ,{"specie": "Aardaker (Lathyrus tuberosus)", "link": "https://www.verspreidingsatlas.nl/0717", "color": "rgb(255, 0, 0)", "months": [6,7,8]}
+                ,{"specie": "Ballote (Ballota nigra)", "link": "https://www.verspreidingsatlas.nl/5030", "color": "rgb(255, 0, 0)", "months": [6,7,8,9,10,11,12]}
+                ,{"specie": "Bittere wilg (Salix purpurea)", "link": "https://www.verspreidingsatlas.nl/1123", "color": "rgb(192, 192, 192)", "months": [4]}
+                ,{"specie": "Valse salie (Teucrium scorodonia)", "link": "https://www.verspreidingsatlas.nl/1273", "color": "rgb(192, 192, 192)", "months": [7,8]}
+                ,{"specie": "Heggedoornzaad (Torilis japonica)", "link": "https://www.verspreidingsatlas.nl/1289", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Winterlinde (Tilia cordata)", "link": "https://www.verspreidingsatlas.nl/1285", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Stekelbrem (Genista anglica)", "link": "https://www.verspreidingsatlas.nl/0558", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8]}
+                ,{"specie": "Groot hoefblad (Petasites hybridus)", "link": "https://www.verspreidingsatlas.nl/0926", "color": "rgb(192, 192, 192)", "months": [3,4]}
+                ,{"specie": "Wrangwortel (Helleborus viridis (subsp. occidentalis))", "link": "https://www.verspreidingsatlas.nl/0605", "color": "rgb(192, 192, 192)", "months": [1,2,3,4]}
+                ,{"specie": "Prei (Allium porrum)", "link": "https://www.verspreidingsatlas.nl/5008", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Veldereprijs (Veronica arvensis)", "link": "https://www.verspreidingsatlas.nl/1347", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8,9,10,11,12]}
+                ,{"specie": "Vogelmuur (Stellaria media)", "link": "https://www.verspreidingsatlas.nl/1250", "color": "rgb(192, 192, 192)", "months": [1,2,3,4,5,6,7,8,9,10,11,12]}
+                ,{"specie": "Valse salie (Teucrium scorodonia)", "link": "https://www.verspreidingsatlas.nl/1273", "color": "rgb(192, 192, 192)", "months": [7,8]}
+                ,{"specie": "Grote wederik (Lysimachia vulgaris)", "link": "https://www.verspreidingsatlas.nl/0784", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Madeliefje (Bellis perennis)", "link": "https://www.verspreidingsatlas.nl/0135", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8,9]}
+                ,{"specie": "Wild kattekruid (Nepeta cataria)", "link": "https://www.verspreidingsatlas.nl/0862", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Moeslook (Allium oleraceum)", "link": "https://www.verspreidingsatlas.nl/0031", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Gele krokus (Crocus flavus)", "link": "https://www.verspreidingsatlas.nl/5049", "color": "rgb(192, 192, 192)", "months": [2,3,4]}
+                ]
+                </pre>
+                <pre class='table-data' style='display: none;' data-table-code='t-em' hidden>
+                [{"specie": "Zwarte bes (Ribes nigrum)", "link": "https://www.verspreidingsatlas.nl/1070", "color": "rgb(192, 192, 192)", "months": [4,5]}
+                ,{"specie": "Prachtklokje (Campanula persicifolia)", "link": "https://www.verspreidingsatlas.nl/0194", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Heggedoornzaad (Torilis japonica)", "link": "https://www.verspreidingsatlas.nl/1289", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Echt bitterkruid (Picris hieracioides)", "link": "https://www.verspreidingsatlas.nl/0938", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Framboos (Rubus idaeus)", "link": "https://www.verspreidingsatlas.nl/1091", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Eenstijlige meidoorn (Crataegus monogyna)", "link": "https://www.verspreidingsatlas.nl/0369", "color": "rgb(192, 192, 192)", "months": [5,6]}
+                ,{"specie": "Heggerank (Bryonia dioica)", "link": "https://www.verspreidingsatlas.nl/0167", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Sporkehout (Rhamnus frangula)", "link": "https://www.verspreidingsatlas.nl/0530", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9]}
+                ,{"specie": "Wrangwortel (Helleborus viridis (subsp. occidentalis))", "link": "https://www.verspreidingsatlas.nl/0605", "color": "rgb(192, 192, 192)", "months": [1,2,3,4]}
+                ,{"specie": "Smalle wikke s.l. (Vicia sativa)", "link": "https://www.verspreidingsatlas.nl/1960", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Kruipbrem (Genista pilosa)", "link": "https://www.verspreidingsatlas.nl/0560", "color": "rgb(192, 192, 192)", "months": [4,5,6,7]}
+                ,{"specie": "Smalle wikke s.l. (Vicia sativa)", "link": "https://www.verspreidingsatlas.nl/1960", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Gewone ereprijs (Veronica chamaedrys)", "link": "https://www.verspreidingsatlas.nl/1351", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Koninginnekruid (Eupatorium cannabinum)", "link": "https://www.verspreidingsatlas.nl/0490", "color": "rgb(255, 0, 0)", "months": [7,8,9]}
+                ,{"specie": "Muurpeper (Sedum acre)", "link": "https://www.verspreidingsatlas.nl/1175", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Donkere ooievaarsbek (Geranium phaeum)", "link": "https://www.verspreidingsatlas.nl/0572", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9]}
+                ,{"specie": "Gewone pastinaak (Pastinaca sativa)", "link": "https://www.verspreidingsatlas.nl/0922", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Gewone pastinaak (Pastinaca sativa)", "link": "https://www.verspreidingsatlas.nl/0922", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Gele dovenetel (Lamiastrum galeobdolon)", "link": "https://www.verspreidingsatlas.nl/0702", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Akkerandoorn (Stachys arvensis)", "link": "https://www.verspreidingsatlas.nl/1243", "color": "rgb(255, 0, 0)", "months": [7,8,9,10,11,12]}
+                ]
+                </pre>
+                <pre class='table-data' style='display: none;' data-table-code='t-ev' hidden>
+                [{"specie": "Hazepootje (Trifolium arvense)", "link": "https://www.verspreidingsatlas.nl/1296", "color": "rgb(192, 192, 192)", "months": [7,8,9,10,11,12]}
+                ,{"specie": "Gevlekt longkruid (Pulmonaria officinalis)", "link": "https://www.verspreidingsatlas.nl/1032", "color": "rgb(192, 192, 192)", "months": [3,4,5]}
+                ,{"specie": "Smalle wikke s.l. (Vicia sativa)", "link": "https://www.verspreidingsatlas.nl/1960", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Watermunt (Mentha aquatica)", "link": "https://www.verspreidingsatlas.nl/0813", "color": "rgb(192, 192, 192)", "months": [7,8,9,10,11,12]}
+                ,{"specie": "Raapzaad (Brassica rapa)", "link": "https://www.verspreidingsatlas.nl/1804", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8]}
+                ,{"specie": "Grote ratelaar (Rhinanthus angustifolius)", "link": "https://www.verspreidingsatlas.nl/1066", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9,10]}
+                ,{"specie": "Peen (Daucus carota)", "link": "https://www.verspreidingsatlas.nl/0394", "color": "rgb(192, 192, 192)", "months": [6,7,8,9,10,11,12]}
+                ,{"specie": "Heggerank (Bryonia dioica)", "link": "https://www.verspreidingsatlas.nl/0167", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Raapzaad (Brassica rapa)", "link": "https://www.verspreidingsatlas.nl/1804", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8]}
+                ,{"specie": "Vijfvingerkruid (Potentilla reptans)", "link": "https://www.verspreidingsatlas.nl/1010", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Brede lathyrus (Lathyrus latifolius)", "link": "https://www.verspreidingsatlas.nl/1864", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Kleine ratelaar (Rhinanthus minor)", "link": "https://www.verspreidingsatlas.nl/1067", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9]}
+                ,{"specie": "Betonie (Stachys officinalis)", "link": "https://www.verspreidingsatlas.nl/1244", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Holwortel (Corydalis cava)", "link": "https://www.verspreidingsatlas.nl/0361", "color": "rgb(192, 192, 192)", "months": [3,4,5]}
+                ,{"specie": "Grote tijm (Thymus pulegioides)", "link": "https://www.verspreidingsatlas.nl/1283", "color": "rgb(255, 0, 0)", "months": [6,7,8]}
+                ,{"specie": "Koninginnekruid (Eupatorium cannabinum)", "link": "https://www.verspreidingsatlas.nl/0490", "color": "rgb(255, 0, 0)", "months": [7,8,9]}
+                ,{"specie": "Duifkruid (Scabiosa columbaria)", "link": "https://www.verspreidingsatlas.nl/1147", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Wilde cichorei (Cichorium intybus)", "link": "https://www.verspreidingsatlas.nl/0325", "color": "rgb(192, 192, 192)", "months": [7,8]}
+                ,{"specie": "Knopherik (Raphanus raphanistrum)", "link": "https://www.verspreidingsatlas.nl/1061", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Appel (Malus sylvestris)", "link": "https://www.verspreidingsatlas.nl/1934", "color": "rgb(192, 192, 192)", "months": [4,5]}
+                ]
+                </pre>
+                <pre class='table-data' style='display: none;' data-table-code='t-ez' hidden>
+                [{"specie": "Madeliefje (Bellis perennis)", "link": "https://www.verspreidingsatlas.nl/0135", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8,9]}
+                ,{"specie": "Reukeloze kamille (Tripleurospermum maritimum)", "link": "https://www.verspreidingsatlas.nl/0795", "color": "rgb(192, 192, 192)", "months": [6,7,8,9,10,11,12]}
+                ,{"specie": "Citroengele honingklaver (Melilotus officinalis)", "link": "https://www.verspreidingsatlas.nl/0812", "color": "rgb(192, 192, 192)", "months": [7,8,9,10]}
+                ,{"specie": "Kleine ratelaar (Rhinanthus minor)", "link": "https://www.verspreidingsatlas.nl/1067", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9]}
+                ,{"specie": "Slipbladige rudbeckia (Rudbeckia laciniata)", "link": "https://www.verspreidingsatlas.nl/1880", "color": "rgb(192, 192, 192)", "months": [8,9]}
+                ,{"specie": "Sleedoorn (Prunus spinosa)", "link": "https://www.verspreidingsatlas.nl/1021", "color": "rgb(192, 192, 192)", "months": [4,5]}
+                ,{"specie": "Fluitekruid (Anthriscus sylvestris)", "link": "https://www.verspreidingsatlas.nl/0070", "color": "rgb(192, 192, 192)", "months": [5,6]}
+                ,{"specie": "Wondklaver (Anthyllis vulneraria)", "link": "https://www.verspreidingsatlas.nl/0071", "color": "rgb(192, 192, 192)", "months": [5,6]}
+                ,{"specie": "Blauwe bosbes (Vaccinium myrtillus)", "link": "https://www.verspreidingsatlas.nl/1329", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Echte valeriaan (Valeriana officinalis)", "link": "https://www.verspreidingsatlas.nl/1333", "color": "rgb(255, 0, 0)", "months": [6,7]}
+                ,{"specie": "Gewoon vingerhoedskruid (Digitalis purpurea)", "link": "https://www.verspreidingsatlas.nl/0406", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9,10]}
+                ,{"specie": "Madeliefje (Bellis perennis)", "link": "https://www.verspreidingsatlas.nl/0135", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8,9]}
+                ,{"specie": "Stijf havikskruid (Hieracium laevigatum)", "link": "https://www.verspreidingsatlas.nl/0618", "color": "rgb(192, 192, 192)", "months": [7,8,9,10,11,12]}
+                ,{"specie": "Gewone ereprijs (Veronica chamaedrys)", "link": "https://www.verspreidingsatlas.nl/1351", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Ringelwikke (Vicia hirsuta)", "link": "https://www.verspreidingsatlas.nl/1370", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Gewone margriet (Leucanthemum vulgare)", "link": "https://www.verspreidingsatlas.nl/0319", "color": "rgb(192, 192, 192)", "months": [5,6,7,8]}
+                ,{"specie": "Klein hoefblad (Tussilago farfara)", "link": "https://www.verspreidingsatlas.nl/1316", "color": "rgb(192, 192, 192)", "months": [2,3,4]}
+                ,{"specie": "Witte dovenetel (Lamium album)", "link": "https://www.verspreidingsatlas.nl/0700", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8,9,10,11,12]}
+                ,{"specie": "Moerasandoorn (Stachys palustris)", "link": "https://www.verspreidingsatlas.nl/1245", "color": "rgb(255, 0, 0)", "months": [7,8]}
+                ,{"specie": "Valse salie (Teucrium scorodonia)", "link": "https://www.verspreidingsatlas.nl/1273", "color": "rgb(192, 192, 192)", "months": [7,8]}
+                ]
+                </pre>
+                <pre class='table-data' style='display: none;' data-table-code='t-mm' hidden>
+                [{"specie": "Knoopkruid (Centaurea jacea)", "link": "https://www.verspreidingsatlas.nl/1766", "color": "rgb(192, 192, 192)", "months": [6,7,8,9,10,11,12]}
+                ,{"specie": "Hemelsleutel (Sedum telephium)", "link": "https://www.verspreidingsatlas.nl/2358", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Moeraswederik (Lysimachia thyrsiflora)", "link": "https://www.verspreidingsatlas.nl/0783", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Gevlekt longkruid (Pulmonaria officinalis)", "link": "https://www.verspreidingsatlas.nl/1032", "color": "rgb(192, 192, 192)", "months": [3,4,5]}
+                ,{"specie": "Gewone dophei (Erica tetralix)", "link": "https://www.verspreidingsatlas.nl/0473", "color": "rgb(255, 0, 0)", "months": [6,7,8,9,10,11,12]}
+                ,{"specie": "Gewone engelwortel (Angelica sylvestris)", "link": "https://www.verspreidingsatlas.nl/0060", "color": "rgb(192, 192, 192)", "months": [7,8,9,10,11,12]}
+                ,{"specie": "Ui (Allium cepa)", "link": "https://www.verspreidingsatlas.nl/2369", "color": "rgb(192, 192, 192)", "months": [7,8]}
+                ,{"specie": "Akkerklokje (Campanula rapunculoides)", "link": "https://www.verspreidingsatlas.nl/0195", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Ruige rudbeckia (Rudbeckia hirta)", "link": "https://www.verspreidingsatlas.nl/5134", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Grauwe en Rossige wilg (Salix cinerea)", "link": "https://www.verspreidingsatlas.nl/1119", "color": "rgb(192, 192, 192)", "months": [3,4]}
+                ,{"specie": "Grote centaurie (Centaurea scabiosa)", "link": "https://www.verspreidingsatlas.nl/0284", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Wit vetkruid (Sedum album)", "link": "https://www.verspreidingsatlas.nl/1176", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Bieslook (Allium schoenoprasum)", "link": "https://www.verspreidingsatlas.nl/0032", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Speerdistel (Cirsium vulgare)", "link": "https://www.verspreidingsatlas.nl/0336", "color": "rgb(192, 192, 192)", "months": [7,8]}
+                ,{"specie": "Piramidezenegroen (Ajuga pyramidalis)", "link": "https://www.verspreidingsatlas.nl/2422", "color": "rgb(192, 192, 192)", "months": [5,6]}
+                ,{"specie": "Zandblauwtje (Jasione montana)", "link": "https://www.verspreidingsatlas.nl/0669", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Kale jonker (Cirsium palustre)", "link": "https://www.verspreidingsatlas.nl/0335", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Overblijvende ossetong (Pentaglottis sempervirens)", "link": "https://www.verspreidingsatlas.nl/1871", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8,9,10,11,12]}
+                ,{"specie": "Bittere wilg (Salix purpurea)", "link": "https://www.verspreidingsatlas.nl/1123", "color": "rgb(192, 192, 192)", "months": [4]}
+                ,{"specie": "Overblijvende ossetong (Pentaglottis sempervirens)", "link": "https://www.verspreidingsatlas.nl/1871", "color": "rgb(192, 192, 192)", "months": [4,5,6,7,8,9,10,11,12]}
+                ]
+                </pre>
+                <pre class='table-data' style='display: none;' data-table-code='t-mv' hidden>
+                [{"specie": "Bonte krokus (Crocus vernus)", "link": "https://www.verspreidingsatlas.nl/1623", "color": "rgb(192, 192, 192)", "months": [2,3,4]}
+                ,{"specie": "Heelblaadjes (Pulicaria dysenterica)", "link": "https://www.verspreidingsatlas.nl/1029", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Zwarte mosterd (Brassica nigra)", "link": "https://www.verspreidingsatlas.nl/0152", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Spaanse aak (Acer campestre)", "link": "https://www.verspreidingsatlas.nl/0001", "color": "rgb(192, 192, 192)", "months": [5,6]}
+                ,{"specie": "Speerdistel (Cirsium vulgare)", "link": "https://www.verspreidingsatlas.nl/0336", "color": "rgb(192, 192, 192)", "months": [7,8]}
+                ,{"specie": "Ballote (Ballota nigra)", "link": "https://www.verspreidingsatlas.nl/5030", "color": "rgb(255, 0, 0)", "months": [6,7,8,9,10,11,12]}
+                ,{"specie": "Wondklaver (Anthyllis vulneraria)", "link": "https://www.verspreidingsatlas.nl/0071", "color": "rgb(192, 192, 192)", "months": [5,6]}
+                ,{"specie": "Zandblauwtje (Jasione montana)", "link": "https://www.verspreidingsatlas.nl/0669", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Gewone pastinaak (Pastinaca sativa)", "link": "https://www.verspreidingsatlas.nl/0922", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Waterkruiskruid (Senecio aquaticus)", "link": "https://www.verspreidingsatlas.nl/1183", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Zomerlinde (Tilia platyphyllos)", "link": "https://www.verspreidingsatlas.nl/1286", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Tweestijlige meidoorn (Crataegus laevigata)", "link": "https://www.verspreidingsatlas.nl/0370", "color": "rgb(192, 192, 192)", "months": [5]}
+                ,{"specie": "Gewoon biggekruid (Hypochaeris radicata)", "link": "https://www.verspreidingsatlas.nl/0654", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Moeraswederik (Lysimachia thyrsiflora)", "link": "https://www.verspreidingsatlas.nl/0783", "color": "rgb(192, 192, 192)", "months": [5,6,7]}
+                ,{"specie": "Knikkende distel (Carduus nutans)", "link": "https://www.verspreidingsatlas.nl/0209", "color": "rgb(192, 192, 192)", "months": [7,8]}
+                ,{"specie": "Peen (Daucus carota)", "link": "https://www.verspreidingsatlas.nl/0394", "color": "rgb(192, 192, 192)", "months": [6,7,8,9,10,11,12]}
+                ,{"specie": "Slangekruid (Echium vulgare)", "link": "https://www.verspreidingsatlas.nl/0431", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9]}
+                ,{"specie": "Akkerleeuwebek (Misopates orontium)", "link": "https://www.verspreidingsatlas.nl/0072", "color": "rgb(192, 192, 192)", "months": [6,7,8,9,10]}
+                ,{"specie": "Boswederik (Lysimachia nemorum)", "link": "https://www.verspreidingsatlas.nl/0781", "color": "rgb(192, 192, 192)", "months": [5,6,7,8]}
+                ,{"specie": "Gewoon vingerhoedskruid (Digitalis purpurea)", "link": "https://www.verspreidingsatlas.nl/0406", "color": "rgb(192, 192, 192)", "months": [5,6,7,8,9,10]}
+                ]
+                </pre>
+                <pre class='table-data' style='display: none;' data-table-code='t-mz' hidden>
+                [{"specie": "Lathyruswikke (Vicia lathyroides)", "link": "https://www.verspreidingsatlas.nl/1371", "color": "rgb(192, 192, 192)", "months": [4,5,6]}
+                ,{"specie": "Muurpeper (Sedum acre)", "link": "https://www.verspreidingsatlas.nl/1175", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Gewone engelwortel (Angelica sylvestris)", "link": "https://www.verspreidingsatlas.nl/0060", "color": "rgb(192, 192, 192)", "months": [7,8,9,10,11,12]}
+                ,{"specie": "Piramidezenegroen (Ajuga pyramidalis)", "link": "https://www.verspreidingsatlas.nl/2422", "color": "rgb(192, 192, 192)", "months": [5,6]}
+                ,{"specie": "Wolfspoot (Lycopus europaeus)", "link": "https://www.verspreidingsatlas.nl/0780", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Gewone smeerwortel (Symphytum officinale)", "link": "https://www.verspreidingsatlas.nl/1259", "color": "rgb(192, 192, 192)", "months": [5,6,7,8]}
+                ,{"specie": "Echte marjolein (Origanum majorana)", "link": "https://www.verspreidingsatlas.nl/5101", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Sierlijk vetkruid (Sedum forsterianum)", "link": "https://www.verspreidingsatlas.nl/1418", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Akkerdistel (Cirsium arvense)", "link": "https://www.verspreidingsatlas.nl/0331", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Wilde marjolein (Origanum vulgare)", "link": "https://www.verspreidingsatlas.nl/0894", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Zomerlinde (Tilia platyphyllos)", "link": "https://www.verspreidingsatlas.nl/1286", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Grote tijm (Thymus pulegioides)", "link": "https://www.verspreidingsatlas.nl/1283", "color": "rgb(255, 0, 0)", "months": [6,7,8]}
+                ,{"specie": "Wouw (Reseda luteola)", "link": "https://www.verspreidingsatlas.nl/1063", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Sierlijk vetkruid (Sedum forsterianum)", "link": "https://www.verspreidingsatlas.nl/1418", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ,{"specie": "Wilde marjolein (Origanum vulgare)", "link": "https://www.verspreidingsatlas.nl/0894", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Wilde marjolein (Origanum vulgare)", "link": "https://www.verspreidingsatlas.nl/0894", "color": "rgb(192, 192, 192)", "months": [7,8,9]}
+                ,{"specie": "Hemelsleutel (Sedum telephium)", "link": "https://www.verspreidingsatlas.nl/2358", "color": "rgb(192, 192, 192)", "months": [6,7,8,9]}
+                ,{"specie": "Waterkruiskruid (Senecio aquaticus)", "link": "https://www.verspreidingsatlas.nl/1183", "color": "rgb(192, 192, 192)", "months": [6,7,8]}
+                ,{"specie": "Vogelmuur (Stellaria media)", "link": "https://www.verspreidingsatlas.nl/1250", "color": "rgb(192, 192, 192)", "months": [1,2,3,4,5,6,7,8,9,10,11,12]}
+                ,{"specie": "Zacht vetkruid (Sedum sexangulare)", "link": "https://www.verspreidingsatlas.nl/1181", "color": "rgb(192, 192, 192)", "months": [6,7]}
+                ]
+                </pre>
+                <table class='species-table'>
+                <thead> </thead>
+                <tbody> </tbody>
+                </table>
+                </div>
+                </div>
+                <div>
+                <input type='checkbox' id='section_4' class='section_title_input' />
+                <div class='sm-box section_dropdown'><img src='./assets/arrow.svg' alt='arrow' /></div>
+                <label for='section_4' class='section_title'>Vuistregels voor beheer</label>
+                <div class='section_content'>
+                <h4 class="section_sub-title">Timing</h4><h4 class="section_sub-title">Materialen</h4><h4 class="section_sub-title">Praktische uitvoering</h4><h4 class="section_sub-title">Ruimtelijke indeling</h4>
+                </div>
+                </div>
+                <div>
+                <input type='checkbox' id='section_5' class='section_title_input' />
+                <div class='sm-box section_dropdown'><img src='./assets/arrow.svg' alt='arrow' /></div>
+                <label for='section_5' class='section_title'>Combineren met nestgelegenheid</label>
+                <div class='section_content'>
+                <p>Algemene intro belang combi nest + voedsel</p><p>Van nature levert deze maatregel als nestgelegenheid. Dit is verder te bevorderen door:</p><p>zie tabel</p><p>In aanvulling daarop is het waardevol om kunstmatige nestgelegenheid te bieden. Kijk daarvoor op deze pagina.</p>
+                </div>
+                </div>
 
-              <div>
-                <input
-                  type="checkbox"
-                  id="section_4"
-                  class="section_title_input"
-                />
-                <div class="sm-box section_dropdown">
-                  <img src="./assets/arrow.svg" alt="arrow" />
-                </div>
-                <label for="section_4" class="section_title">
-                  Vuistregels voor aanleg</label
-                >
-                <div class="section_content">
-                  <h4 class="section_sub-title">Timing</h4>
-                  <p>
-                    Zaaien kan in principe jaarrond, maar sommige periodes
-                    hebben de voorkeur. Bij zaaien in het najaar kunnen
-                    bijvoorbeeld winterannuellen al kiemen, en is er minder kans
-                    op onkruid dan bij zaaien in het voorjaar. Bij zaaien in het
-                    voorjaar (februari-maart voor éénjarige akkerkruiden) moet
-                    mogelijk wat extra tijd worden ingepland voor het toepassen
-                    van een vals zaaibed.
-                  </p>
-                  <h4 class="section_sub-title">Voorbewerking</h4>
-                  <p>
-                    Bekijk eerst welke gewenste plantensoorten al aanwezig zijn
-                    en of deze kunnen blijven staan, soms is aangepast beheer
-                    beter dan nieuwe aanleg.
-                  </p>
-                  <p>
-                    Ingezaaide bloemen vestigen zich niet goed in grasmatten of
-                    dichte vegetatie. Verwijder deze oppervlakkig (5 cm) en
-                    verstoor de grond daarbij zo min mogelijk (om activering van
-                    ongewenste zaden in de bodem te voorkomen).
-                  </p>
-                  <p>
-                    Verwijder wortels van hardnekkige wortelonkruiden
-                    (handmatig).
-                  </p>
-                  <p>
-                    In de bodem is vaak een zaadbank aanwezig van ongewenste
-                    onkruiden die kiemen na verstoring van de bodem. Door een
-                    vals-zaaibed te creëren wordt de overlast beperkt. Wacht na
-                    het klaarmaken van het zaaibed tot deze soorten kiemen en
-                    schoffel deze ondiep af. Herhaal dit eventueel voor beter
-                    resultaat. Bij de aanleg van een meerjarig kruidenrijk
-                    grasland is het toepassen van een vals-zaaibed niet nodig.
-                  </p>
-                  <p>
-                    Bemesting is bij een bloemrijke vegetatie niet gewenst.
-                  </p>
-                  <h4 class="section_sub-title">Aanplant/inzaai</h4>
-                  <p>
-                    Verdun het zaadmengsel met grond om het gelijkmatiger te
-                    verdelen over het oppervlakte. Bijvoorbeeld één kruiwagen
-                    lichtvochtig zand op 1 kilo zaad.
-                  </p>
-                  <p>
-                    De aanbevolen hoeveelheid zaden per vierkante meter hangt af
-                    van de (bodem)omstandigheden. Dit varieert van 2 gram per m2
-                    bij een droge, dichte grondsoort tot 1 gram op 1-1,5 m2 bij
-                    vochtige en voedselrijke bodems. Vraag een leverancier of
-                    specialist eventueel om advies.
-                  </p>
-                  <p>
-                    Zaai het liefst handmatig, zaaimachines zijn vaak ongeschikt
-                    door de diversiteit aan zaden. Het mengsel wordt dan niet
-                    homogeen verspreid. Tevens kan het gebruik van zware
-                    machines de bodem verdichten.
-                  </p>
-                  <p>
-                    Zaai het mengsel op kale grond en nooit dieper dan de dikte
-                    van de zaden. Eventueel licht aanharken- of rollen, maar
-                    nooit met zwaar materieel.
-                  </p>
-                  <p>
-                    Om in het eerste jaar na aanleg meteen een bloeiend
-                    resultaat te krijgen kan tot maximaal 20% eenjarig bloemzaad
-                    worden toegevoegd aan het mengsel. Bij een hoger aandeel
-                    eenjarige bloemen concurreren deze de meerjarige planten
-                    weg. Het tweede jaar na aanplant kan dit, als de eenjarige
-                    grotendeels weg zijn en de meerjarigen nog in ontwikkeling
-                    zijn, zorgen tot teleurstelling bij het publiek.
-                  </p>
-                  <h4 class="section_sub-title">
-                    Nazorg
-                    <span class="text"
-                      >(beheer in eerste spaneriode na aanleg om vestiging te
-                      bevorderen)
-                    </span>
-                  </h4>
-                  <p>
-                    Bij zaaien in voorjaar kan soms veel onkruid opkomen. (Om
-                    dit te voorkomen: valszaaibed-methode toepassen.) Wanneer de
-                    grond (bijna) niet meer te zien is (kiemplanten krijgen te
-                    weinig licht), kan dit eventueel op 5 cm afgemaaid en
-                    afgevoerd worden. Bij zaaien in nazomer/herfst is dit vaak
-                    niet nodig en kan vanaf het volgende jaar begonnen worden
-                    met regulier beheer.
-                  </p>
-                  <p>
-                    Ratelaar (Rhinanthus) is een half-parasiet op grassen en kan
-                    zo vergrassing van een bloemenweide enigszins tegengaan, met
-                    name op niet al te voedselrijke bodems. Zaaien met het
-                    bloemenmengsel, of bijzaaien in de late zomer -late herfst;
-                    in dat geval zorgen dat er ruimte op de bodem is voor de
-                    zaden om te bereiken.
-                  </p>
-                  <h4 class="section_sub-title">Waarde voor de toekomst</h4>
-                  <p>
-                    Blijvend bijvriendelijk beheer is essentieel om de waarde
-                    voor de toekomst te behouden. Een gericht a
-                    <a href="#">beheer-advies</a> is ook beschikbaar.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

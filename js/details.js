@@ -1,25 +1,88 @@
+
 function getMeasureContent(_fgr, _infopagina) {
-  const url = 'https://www.synbiosys.alterra.nl/bestuivers/teksten.aspx?fgr=' + _fgr + '&infopagina=' + _infopagina
-
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      document.getElementById('measure_content').innerHTML = data
-
+  url = 'teksten.aspx?fgr=' + _fgr + '&infopagina=' + _infopagina;
+  jQuery.get(url, function (data) {
+      document.getElementById('measure_content').innerHTML = data;
+      document.getElementById('measure_image').hidden = false;
+      runDetailsLayoutLogic()
       runTableSectionLogic()
-    })
-    .catch(error => console.log(error))
+  });
 }
 
 
 
 
-/***************
-table section
-***************/
+function runDetailsLayoutLogic() {
+
+  const backBtnHtml = `
+    <div class="go-back" hidden>
+      <input type="checkbox" class="section_title_input" />
+      <div class="sm-box section_dropdown">
+        <img src="./assets/arrow.svg" alt="arrow" />
+      </div>
+      <label class="section_title">
+        Naar overzicht
+      </label>
+    </div>
+  `
+
+  const detailsContainerHtml = `
+    <div class="content_measure_details" id="measure_content">
+    </div>
+  `
+
+  const mainContent = select('.content')
+  const contentDetails = select('.content_details')
+  const backBtn = select('.go-back', contentDetails)
+
+
+  const isMedium = window.matchMedia('(max-width: 1024px)')
+
+  isMedium.onchange = e => {
+    handleDetailsLayout()
+  }
+
+  handleDetailsLayout()
+
+
+
+  function handleDetailsLayout() {
+    const measureContent = select('#measure_content')
+    if(measureContent.childElementCount <= 0) return
+
+    if(isMedium.matches) {
+      backBtn.hidden = false
+      contentDetails.classList.add('full-width')
+      mainContent.style = `
+        height: 0px;
+        overflow: hidden;
+      `
+      scrollTop()
+
+      backBtn.addEventListener('click', () => {
+        contentDetails.classList.remove('full-width')
+        contentDetails.innerHTML = backBtnHtml + detailsContainerHtml
+        mainContent.style = `
+          height: auto;
+          overflow: auto;
+        `
+        scrollBottom()
+      })
+    } else {
+      contentDetails.classList.remove('full-width')
+      backBtn.hidden = true
+      mainContent.style = `
+        height: auto;
+        overflow: auto;
+      `
+    }
+  }
+}
+
+
 
 function runTableSectionLogic() {
+
 
   const togglerOptions = selectAll('.toggler_option')
   const optionsFilter = select('.options-filter')
@@ -36,7 +99,9 @@ function runTableSectionLogic() {
         renderTableData('t-e', true)
       } else {
         optionsFilter.hidden = false
-        renderTableData(currentTable)
+        if(currentTable === 't-e') renderTableData('t-am')
+        else renderTableData(currentTable)
+
       }
     })
   })
@@ -97,6 +162,7 @@ function runTableSectionLogic() {
 
   // render table function based on param
   function renderTableData(code, changeCurrent) {
+    console.log(code)
     const pre = select(`.table-data[data-table-code="${code}"]`)
     const tableArray = JSON.parse(pre.textContent)
 
