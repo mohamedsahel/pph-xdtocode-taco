@@ -1,6 +1,44 @@
+
 .content {
   padding: 1.8rem;
 }
+
+
+.content li {
+  margin: 1rem;
+}
+
+.content ol ol, ul ul {
+  margin-left: 3rem;
+}
+
+.content ol ol ol, ul ul ul {
+  margin-left: 6rem;
+}
+
+
+
+.content ul li {
+  list-style-type: square;
+}
+
+.content ul ul li {
+  list-style-type: circle;
+}
+
+.content ul ul ul li {
+  list-style-type: disc;
+}
+
+
+.content ol ol li {
+  list-style-type: lower-latin;
+}
+
+.content ol ol ol li {
+  list-style-type: lower-roman;
+}
+
 
 .content.full {
   margin-right: 0;

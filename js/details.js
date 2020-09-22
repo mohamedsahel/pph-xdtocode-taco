@@ -1,6 +1,6 @@
 
-function getMeasureContent(_fgr, _infopagina) {
-  url = 'teksten.aspx?fgr=' + _fgr + '&infopagina=' + _infopagina;
+function getMeasureContent(_fgr, _infopagina, _titel) {
+  url = 'teksten.aspx?fgr=' + _fgr + '&infopagina=' + _infopagina + '&titel=' + _titel;
   jQuery.get(url, function (data) {
       document.getElementById('measure_content').innerHTML = data;
       document.getElementById('measure_image').hidden = false;
@@ -10,6 +10,8 @@ function getMeasureContent(_fgr, _infopagina) {
 }
 
 
+runDetailsLayoutLogic()
+runTableSectionLogic()
 
 
 function runDetailsLayoutLogic() {
@@ -34,6 +36,10 @@ function runDetailsLayoutLogic() {
   const mainContent = select('.content')
   const contentDetails = select('.content_details')
   const backBtn = select('.go-back', contentDetails)
+
+  // open the first section of the content details
+  const firstBulletInput = select('input#section_1', contentDetails)
+  firstBulletInput.checked = true
 
 
   const isMedium = window.matchMedia('(max-width: 1024px)')
@@ -162,7 +168,6 @@ function runTableSectionLogic() {
 
   // render table function based on param
   function renderTableData(code, changeCurrent) {
-    console.log(code)
     const pre = select(`.table-data[data-table-code="${code}"]`)
     const tableArray = JSON.parse(pre.textContent)
 

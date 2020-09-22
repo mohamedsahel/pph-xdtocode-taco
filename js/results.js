@@ -25,7 +25,7 @@ localStorage.setItem('search_params', JSON.stringify(paramsObj))
 
 // edit_btn.addEventListener('click', (e) => {
 //   e.preventDefault()
-//   window.location.href = edit_btn.getAttribute('href')
+//   // window.location.href = edit_btn.getAttribute('href')
 // })
 
 

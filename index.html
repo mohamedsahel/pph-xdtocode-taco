@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/global.css" media="screen" />
 <link rel="stylesheet" href="css/index.css" media="screen" />
@@ -38,7 +39,7 @@
 
 <title>Search Page</title>
 </head>
-<body>
+<body onbeforeunload="() => {}">
 <div class="loader"> <img src="./assets/logo.svg" alt=""> </div>
 <div class="layout">
   <!-- header navgation -->
@@ -76,7 +77,7 @@
     <h3 class="content_h3">Advies op maat in drie stappen</h3>
 
     <!-- search form -->
-    <form action="./results.html" method="GET" class="search_form">
+    <form action="./results.html" method="GET" class="search_form" autocomplete="off">
       <!-- step 1 -->
       <div class="form_step">
         <div class="step_input">

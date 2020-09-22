@@ -110,7 +110,9 @@ class Form {
           this.getField(i).field.classList.add('passed')
           this.getField(i).pickedValueSpan.textContent = fieldValue
 
-          this.getField(i + 1).field.classList.remove('hidden')
+          if(i < 2) {
+            this.getField(i + 1).field.classList.remove('hidden')
+          }
         }
 
       })
