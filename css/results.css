@@ -4,8 +4,8 @@
 }
 
 
-.content li {
-  margin: 1rem;
+.content ol, ul {
+  margin-left: 1rem;
 }
 
 .content ol ol, ul ul {
@@ -17,6 +17,10 @@
 }
 
 
+
+.content li {
+  margin: 1rem;
+}
 
 .content ul li {
   list-style-type: square;
@@ -135,6 +139,7 @@
 
 .content_measures-list {
   margin-right: 1.6rem;
+  margin-left: 0;
   list-style: none;
 }
 
@@ -142,7 +147,7 @@
   margin-bottom: 1.4rem;
   margin-left: 0rem;
   font-weight: bold;
-  list-style-type: none;
+  list-style-type: none !important;
 }
 
 .color-box {
