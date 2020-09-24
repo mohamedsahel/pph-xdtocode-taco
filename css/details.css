@@ -270,6 +270,10 @@
   display: none;
 }
 
+.dropdown_menu {
+  margin-left: 0 !important;
+}
+
 .dropdown_item,
 .dropdown_picked-option {
   font-weight: bold;
@@ -278,6 +282,7 @@
   padding: 1rem;
   padding-left: 11.5rem;
   cursor: pointer;
+  list-style-type: none !important;
 }
 
 .dropdown:nth-child(2) .dropdown_item,
