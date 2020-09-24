@@ -13,6 +13,8 @@
 }
 
 .carousel_slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   position: relative;
@@ -32,8 +34,10 @@
 .slide_image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .slide_image-credit {
@@ -55,8 +59,12 @@
 
 /* Carousel controls */
 .carousel_controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 2rem;
 }
 
@@ -69,7 +77,8 @@
 }
 
 .carousel_arrow.left {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 
@@ -140,6 +149,22 @@ input:focus {
   border: 1px solid black;
 }
 
+input::-webkit-input-placeholder {
+  color: rgb(170, 170, 170);
+}
+
+input::-moz-placeholder {
+  color: rgb(170, 170, 170);
+}
+
+input:-ms-input-placeholder {
+  color: rgb(170, 170, 170);
+}
+
+input::-ms-input-placeholder {
+  color: rgb(170, 170, 170);
+}
+
 input::placeholder {
   color: rgb(170, 170, 170);
 }
@@ -147,7 +172,9 @@ input::placeholder {
 input#postcode {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 14rem;
   margin-left: 1rem;
 }
@@ -267,19 +294,22 @@ input#postcode {
   left: 5px;
   border-radius: 100%;
   -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
 [type='radio']:not(:checked) + label:after {
   opacity: 0;
   -webkit-transform: scale(0);
-  transform: scale(0);
+  -ms-transform: scale(0);
+      transform: scale(0);
 }
 
 [type='radio']:checked + label:after {
   opacity: 1;
   -webkit-transform: scale(1);
-  transform: scale(1);
+  -ms-transform: scale(1);
+      transform: scale(1);
 }
 
 
@@ -292,8 +322,12 @@ input#postcode {
 }
 
 .search_form.submitting .submit-loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .submit-loader_spinner {

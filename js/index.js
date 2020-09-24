@@ -12,8 +12,3 @@ const imagesCarousel = new Carousel({
 imagesCarousel.render()
 
 
-/*******************************
-  Search Form
-********************************/
-const searchForm = new Form(select('.search_form'))
-searchForm.render()

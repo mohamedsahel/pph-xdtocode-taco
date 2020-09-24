@@ -1,3 +1,4 @@
+
 :root {
   --main-color: #4b76cc;
   --main-color-light: #f0faff;
@@ -92,7 +93,8 @@ a:hover {
   position: absolute;
   top: 20%;
   left: 50%;
-  animation: float 2s ease-in-out infinite;
+  -webkit-animation: float 2s ease-in-out infinite;
+          animation: float 2s ease-in-out infinite;
 }
 
 .loader.hidden {
@@ -100,15 +102,34 @@ a:hover {
 }
 
 
-@keyframes float {
+@-webkit-keyframes float {
   0% {
-    transform: translateY(0px) translate(-50%, -50%);
+    -webkit-transform: translateY(0px) translate(-50%, -50%);
+            transform: translateY(0px) translate(-50%, -50%);
   }
   50% {
-    transform: translateY(25px) translate(-50%, -50%);
+    -webkit-transform: translateY(25px) translate(-50%, -50%);
+            transform: translateY(25px) translate(-50%, -50%);
   }
   100% {
-    transform: translateY(0px) translate(-50%, -50%);
+    -webkit-transform: translateY(0px) translate(-50%, -50%);
+            transform: translateY(0px) translate(-50%, -50%);
+  }
+}
+
+
+@keyframes float {
+  0% {
+    -webkit-transform: translateY(0px) translate(-50%, -50%);
+            transform: translateY(0px) translate(-50%, -50%);
+  }
+  50% {
+    -webkit-transform: translateY(25px) translate(-50%, -50%);
+            transform: translateY(25px) translate(-50%, -50%);
+  }
+  100% {
+    -webkit-transform: translateY(0px) translate(-50%, -50%);
+            transform: translateY(0px) translate(-50%, -50%);
   }
 }
 
@@ -252,9 +273,15 @@ a:hover {
 }
 
 .title-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 7.5rem;
   padding-right: 1rem;
   padding-left: 1rem;

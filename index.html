@@ -9,10 +9,6 @@
 <link rel="stylesheet" href="css/index.css" media="screen" />
 <link rel="stylesheet" href="css/print.css" media="print" />
 
-<script src="./js/global.js" defer></script>
-<script src="./js/carousel.js" defer></script>
-<script src="./js/form.js" defer></script>
-<script src="./js/index.js" defer></script>
 <!-- generics -->
 <link rel="icon" href="./assets/favicons/favicon-32.png" sizes="32x32">
 <link rel="icon" href="./assets/favicons/favicon-57.png" sizes="57x57">
@@ -324,5 +320,19 @@
               src="./assets/footer-logo-1-wur.svg" alt="" class="footer_sponsor-img"/> </a> <a href="https://www.naturalis.nl" class="footer_sponsor-link"> <img src="./assets/footer-logo-2-naturalis.svg" alt="" class="footer_sponsor-img"/></a> <a href="https://www.eis-nederland.nl" class="footer_sponsor-link"><img src="./assets/footer-logo-3-eis.svg" alt="" class="footer_sponsor-img"/> </a> <a href="https://www.rijksoverheid.nl/ministeries/ministerie-van-landbouw-natuur-en-voedselkwaliteit" class="footer_sponsor-link"> <img src="./assets/footer-logo-4-lnv.svg" alt="" class="footer_sponsor-img"/> </a> <a href="https://www.bestuivers.nl/nationalebijenstrategie" class="footer_sponsor-link"> <img src="./assets/footer-logo-5-nb.svg" alt="" class="footer_sponsor-img"/> </a> </div>
   </footer>
 </div>
+
+
+<script src="./js/global.js"></script>
+<script src="./js/carousel.js"></script>
+<script src="./js/form.js"></script>
+<script src="./js/index.js"></script>
+
+<script>
+  /*******************************
+    Search Form
+  ********************************/
+  const searchForm = new Form(select('.search_form'))
+  searchForm.render()
+</script>
 </body>
 </html>
