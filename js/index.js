@@ -37,7 +37,7 @@ const getField = (num) => {
 
   return {
     ...outputObj,
-    sumbit: outputObj.field.querySelector('.next'),
+    submit: outputObj.field.querySelector('.next'),
     name,
     value,
     input,
@@ -46,13 +46,16 @@ const getField = (num) => {
   }
 }
 
+let currentField = getField(0)
+
+
 const checkPostcode = (value) => {
   const regExp = /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i
   if (regExp.test(value)) return true
   else return false
 }
 
-const isReadyToSumbit = () => {
+const isReadyToSubmit = () => {
   const valide_1 = checkPostcode(form.elements[getField(0).name].value)
   const valide_2 = !!form.elements[getField(1).name].value
   const valide_3 = !!form.elements[getField(2).name].value
@@ -87,10 +90,12 @@ for(let i = 0; i <= 2; i++) {
 
   // handle input change event
   getField(i).field.addEventListener('input', (e) => {
+    // set current edited field
+    currentField = getField(i)
 
     // disable and enable form sumbit button based on the changed value
-    if(isReadyToSumbit()) getField(2).sumbit.disabled = false
-    else getField(2).sumbit.disabled = true
+    if(isReadyToSubmit()) getField(2).submit.disabled = false
+    else getField(2).submit.disabled = true
 
     const value = e.target.value
     let canNext = false
@@ -102,21 +107,21 @@ for(let i = 0; i <= 2; i++) {
       canNext = value.length >= 4
 
     } else if (getField(i).name === 'situatie') [
-      canNext = !!value && isReadyToSumbit()
+      canNext = !!value && isReadyToSubmit()
     ]
     else {
       canNext = !!value
     }
 
     if(canNext) {
-      getField(i).sumbit.disabled = false
+      getField(i).submit.disabled = false
     } else {
-      getField(i).sumbit.disabled = true
+      getField(i).submit.disabled = true
     }
   })
 
   // handle next buttons click
-  getField(i).sumbit.addEventListener('click', e => {
+  getField(i).submit.addEventListener('click', e => {
     const fieldValue = getField(i).value
 
     if(getField(i).input.getAttribute('id') === 'postcode') {
@@ -127,6 +132,12 @@ for(let i = 0; i <= 2; i++) {
         getField(i).pickedValueSpan.textContent = fieldValue.toUpperCase()
 
         getField(i + 1).field.classList.remove('hidden')
+
+        // scroll to element
+        getField(i + 1).field.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        })
       }
 
     } else {
@@ -135,6 +146,12 @@ for(let i = 0; i <= 2; i++) {
 
       if(i < 2) {
         getField(i + 1).field.classList.remove('hidden')
+
+        // scroll to element
+        getField(i + 1).field.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        })
       }
     }
 
@@ -151,11 +168,18 @@ for(let i = 0; i <= 2; i++) {
 localStorage.removeItem('search_params')
 
 //
-if(isReadyToSumbit()) getField(2).sumbit.disabled = false
-else getField(2).sumbit.disabled = true
+if(isReadyToSubmit()) getField(2).submit.disabled = false
+else getField(2).submit.disabled = true
+
+
+/* handle form submit */
+form.addEventListener('keypress', e => {
+  if(e.keyCode === 13) {
+    currentField.submit.dispatchEvent(new Event('click'))
+  }
+})
 
 /* handle form submit */
 form.addEventListener('submit', e => {
-  // e.preventDefault()
   form.classList.add('submitting')
 })
